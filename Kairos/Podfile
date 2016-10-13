@@ -8,6 +8,7 @@ target 'Kairos' do
 
 # Database
 pod 'Firebase/Core'
+pod 'Firebase/Auth'
 
 # Facebook
 pod 'FBSDKLoginKit'
