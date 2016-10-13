@@ -9,6 +9,9 @@ target 'Kairos' do
 # Database
 pod 'Firebase/Core'
 
+# Facebook
+pod 'FBSDKLoginKit'
+
 end
 
 target 'KairosTests' do
