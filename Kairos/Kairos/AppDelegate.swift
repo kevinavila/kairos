@@ -20,7 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FIRApp.configure()
         
-        return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // Uncomment to allow app to remember login info
+        
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        
+//        if let window = self.window {
+//            if (FBSDKAccessToken.currentAccessToken() != nil) {
+//                let navController = storyboard.instantiateViewControllerWithIdentifier("navController")
+//                window.rootViewController = navController
+//            } else {
+//                let loginController = storyboard.instantiateViewControllerWithIdentifier("loginController")
+//                window.rootViewController = loginController
+//            }
+//        }
+        
+        return true
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {

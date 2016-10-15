@@ -7,7 +7,7 @@
         <!--Login Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="loginController" storyboardIdentifier="loginController" id="BYZ-38-t0r" customClass="LoginController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -20,21 +20,76 @@
                                 <rect key="frame" x="87" y="485" width="240" height="54"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="kairos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ans-4t-0fK">
+                                <rect key="frame" x="145" y="215" width="124" height="54"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7k1-y4-AhJ" secondAttribute="bottom" constant="197" id="c4Q-Zu-3AO"/>
+                            <constraint firstItem="ans-4t-0fK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sug-hN-XLk"/>
                             <constraint firstItem="7k1-y4-AhJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vmH-Pl-1p3"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                     <connections>
                         <outlet property="facebookLoginButton" destination="7k1-y4-AhJ" id="TpN-Qd-HEB"/>
+                        <segue destination="y2s-6v-gW0" kind="show" identifier="navSegue" id="cl2-44-AFF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="305" y="282"/>
+        </scene>
+        <!--Day View-->
+        <scene sceneID="9CF-Gh-O4l">
+            <objects>
+                <viewController restorationIdentifier="dayViewController" storyboardIdentifier="dayViewController" title="Day View" id="ww8-eG-6p6" customClass="DayViewController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IUK-m3-TF4"/>
+                        <viewControllerLayoutGuide type="bottom" id="hY4-te-PPW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j6g-Or-I8g">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-jC-lP4">
+                                <rect key="frame" x="144" y="324" width="127" height="88"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="W4y-vl-4hd"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iB-UQ-PR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="282"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Da-6S-rmO">
+            <objects>
+                <navigationController restorationIdentifier="navController" storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="y2s-6v-gW0" customClass="NavigationController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UzQ-3w-gID">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ww8-eG-6p6" kind="relationship" relationship="rootViewController" id="jIJ-eq-o9T"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkC-JB-4aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="857" y="282"/>
         </scene>
     </scenes>
 </document>

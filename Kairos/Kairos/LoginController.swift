@@ -39,6 +39,8 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
                 print(error!.localizedDescription)
             }
             print("User logged in with facebook...")
+            // Initialize navigation controller
+            self.performSegueWithIdentifier("navSegue", sender: self)
         })
     }
     
