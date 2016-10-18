@@ -35,11 +35,13 @@ PODS:
   - GoogleSymbolUtilities (1.1.2)
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
+  - JTAppleCalendar (6.0.0)
 
 DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase/Auth
   - Firebase/Core
+  - JTAppleCalendar (~> 6.0)
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -54,7 +56,8 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  JTAppleCalendar: 374d7d6309b4c40a41be4167fe4cc3b935831da1
 
-PODFILE CHECKSUM: f4268a0bf792025e14b3e118d6fa93c4317cf6fb
+PODFILE CHECKSUM: 720a71da770974b551b2a669fd384aa5be219387
 
 COCOAPODS: 1.0.1

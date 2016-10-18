@@ -14,6 +14,7 @@ pod 'Firebase/Auth'
 pod 'FBSDKLoginKit'
 
 # Calendar Library
+pod 'JTAppleCalendar', '~> 6.0'
 
 end
 
