@@ -13,6 +13,8 @@ pod 'Firebase/Auth'
 # Facebook
 pod 'FBSDKLoginKit'
 
+# Calendar Library
+
 end
 
 target 'KairosTests' do
