@@ -27,11 +27,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        
 //        if let window = self.window {
-//            if (FBSDKAccessToken.currentAccessToken() != nil) {
-//                let navController = storyboard.instantiateViewControllerWithIdentifier("navController")
+//            if (FBSDKAccessToken.current() != nil) {
+//                let navController = storyboard.instantiateViewController(withIdentifier: "navController")
+//                let monthController = storyboard.instantiateViewController(withIdentifier: "monthController")
+//                let dayViewController = storyboard.instantiateViewController(withIdentifier: "dayViewController")
+//                
 //                window.rootViewController = navController
+//                (window.rootViewController as! UINavigationController).pushViewController(monthController, animated: false)
+//                (window.rootViewController as! UINavigationController).pushViewController(dayViewController, animated: false)
 //            } else {
-//                let loginController = storyboard.instantiateViewControllerWithIdentifier("loginController")
+//                let loginController = storyboard.instantiateViewController(withIdentifier: "loginController")
 //                window.rootViewController = loginController
 //            }
 //        }

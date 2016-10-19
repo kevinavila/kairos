@@ -38,17 +38,17 @@
                     </view>
                     <connections>
                         <outlet property="facebookLoginButton" destination="7k1-y4-AhJ" id="TpN-Qd-HEB"/>
-                        <segue destination="y2s-6v-gW0" kind="show" identifier="navSegue" id="cl2-44-AFF"/>
+                        <segue destination="y2s-6v-gW0" kind="show" identifier="navSegue" id="RME-Ne-vle"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="95" y="194"/>
+            <point key="canvasLocation" x="76" y="194"/>
         </scene>
-        <!--Month-->
+        <!--Month View-->
         <scene sceneID="Wj6-cb-iew">
             <objects>
-                <viewController title="Month" id="LfP-as-eqI" sceneMemberID="viewController">
+                <viewController restorationIdentifier="monthController" storyboardIdentifier="monthController" title="Month View" id="LfP-as-eqI" customClass="MonthController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3JF-AK-yoQ"/>
                         <viewControllerLayoutGuide type="bottom" id="XIB-FZ-Fk6"/>
@@ -56,17 +56,61 @@
                     <view key="view" contentMode="scaleToFill" id="ReS-mC-aj8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Month View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKa-tE-O3I">
+                                <frame key="frameInset" minX="142" minY="323" width="91" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FRG-64-4I1">
+                                <frame key="frameInset" minX="154" minY="375" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to day"/>
+                                <connections>
+                                    <segue destination="Tej-1u-sq1" kind="show" identifier="monthToDay" id="AlP-jJ-syf"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rM-p9-1Oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1622" y="-546"/>
+            <point key="canvasLocation" x="2369" y="194"/>
         </scene>
         <!--Day View-->
+        <scene sceneID="3AV-S0-6hP">
+            <objects>
+                <viewController restorationIdentifier="dayViewController" storyboardIdentifier="dayViewController" title="Day View" id="Tej-1u-sq1" customClass="DayViewController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IJW-7b-ebn"/>
+                        <viewControllerLayoutGuide type="bottom" id="pMy-kp-NpU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SjP-6c-bnm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-qu-1Aa">
+                                <frame key="frameInset" minX="152" minY="323" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h5S-7D-TUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3151" y="194"/>
+        </scene>
+        <!--Year View-->
         <scene sceneID="9CF-Gh-O4l">
             <objects>
-                <viewController restorationIdentifier="dayViewController" storyboardIdentifier="dayViewController" title="Day View" id="ww8-eG-6p6" customClass="DayViewController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="yearController" storyboardIdentifier="yearController" title="Year View" id="ww8-eG-6p6" customClass="YearController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IUK-m3-TF4"/>
                         <viewControllerLayoutGuide type="bottom" id="hY4-te-PPW"/>
@@ -75,19 +119,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-jC-lP4">
-                                <frame key="frameInset" minX="144" minY="324" width="127" height="88"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year View" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmC-jC-lP4">
+                                <frame key="frameInset" minX="133" minY="289" width="127" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hy-Uk-2fa">
+                                <frame key="frameInset" minX="153" minY="385" width="86" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go to month"/>
+                                <connections>
+                                    <segue destination="LfP-as-eqI" kind="show" identifier="yearToMonth" id="BLH-hE-SJJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="W4y-vl-4hd">
-                        <barButtonItem key="leftBarButtonItem" title="Month" id="QKE-0f-qEE"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Year View" id="W4y-vl-4hd"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7iB-UQ-PR6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,6 +146,7 @@
         <!--Navigation Controller-->
         <scene sceneID="5Da-6S-rmO">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DkC-JB-4aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController restorationIdentifier="navController" storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="y2s-6v-gW0" customClass="NavigationController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="UzQ-3w-gID">
@@ -107,7 +158,6 @@
                         <segue destination="ww8-eG-6p6" kind="relationship" relationship="rootViewController" id="jIJ-eq-o9T"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DkC-JB-4aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860" y="194"/>
         </scene>

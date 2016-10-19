@@ -39,8 +39,10 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
                 print(error!.localizedDescription)
             }
             print("User logged in with facebook...")
+            
             // Initialize navigation controller
             self.performSegue(withIdentifier: "navSegue", sender: self)
+
         })
     }
     
@@ -51,6 +53,21 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         try! FIRAuth.auth()!.signOut()
         print("User logged out of facebook...")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "navSegue" {
+            
+            // Get the destination view controller
+            let navVC:NavigationController = segue.destination as! NavigationController
+            let monthVC = self.storyboard?.instantiateViewController(withIdentifier: "monthController")
+            let dayVC = self.storyboard?.instantiateViewController(withIdentifier: "dayViewController")
+            
+            navVC.pushViewController(monthVC!, animated: false)
+            navVC.pushViewController(dayVC!, animated: false)
+        }
+        
     }
 
 }
