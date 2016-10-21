@@ -13,6 +13,7 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     
     @IBOutlet var calendarView: JTAppleCalendarView!
     var selectedDate:Date? = Date()
+    var globalCalendarObject:Calendar = Calendar(identifier: .gregorian)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,11 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         
         let startDate = formatter.date(from: "1995 01 01")! // You can use date generated from a formatter
         let endDate = Date()                                // You can also use dates created from this function
+        let calendarObject = self.globalCalendarObject
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
                                                  numberOfRows: 5,
-                                                 calendar: Calendar(identifier: .gregorian), // This parameter will be removed in version 6.0.1
+                                                 calendar: calendarObject,
                                                  generateInDates: .forAllMonths,
                                                  generateOutDates: .tillEndOfGrid,
                                                  firstDayOfWeek: .sunday)
@@ -48,6 +50,8 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     // Delegate method to display date cells
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         let myCustomCell = cell as! CellView
+        
+        
         
         // Setup Cell text
         myCustomCell.dayLabel.text = cellState.text
@@ -71,13 +75,15 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     
     // This sets the height of your header
     func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
-        return CGSize(width: 200, height: 50)
+        return CGSize(width: 200, height: 150)
     }
     
     // This setups the display of your header
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeader)
-        headerCell?.monthLabel.text = "monthText"
+        let month = self.globalCalendarObject.component(Calendar.Component.month, from: range.start)
+        let monthNames = DateFormatter().monthSymbols as [String]
+        headerCell?.monthLabel.text = monthNames[month]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
