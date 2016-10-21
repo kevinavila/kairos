@@ -21,6 +21,7 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
+        calendarView.registerHeaderView(xibFileNames: ["MonthHeader"])
         
         // No spaces between cells
         calendarView.cellInset = CGPoint(x: 0, y: 0)
@@ -56,6 +57,17 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         } else {
             myCustomCell.isHidden = true
         }
+    }
+    
+    // This sets the height of your header
+    func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
+        return CGSize(width: 200, height: 50)
+    }
+    
+    // This setups the display of your header
+    func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
+        let headerCell = (header as? MonthHeader)
+        headerCell?.monthLabel.text = "monthText"
     }
 }
 
