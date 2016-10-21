@@ -12,6 +12,7 @@ import JTAppleCalendar
 class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleCalendarViewDelegate {
     
     @IBOutlet var calendarView: JTAppleCalendarView!
+    var selectedDate:Date? = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +60,15 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         }
     }
     
+    // Called when cell is selected
+    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        self.selectedDate = date
+        
+        if cellState.isSelected {
+            self.performSegue(withIdentifier: "goToDay", sender: self)
+        }
+    }
+    
     // This sets the height of your header
     func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
         return CGSize(width: 200, height: 50)
@@ -68,6 +78,17 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeader)
         headerCell?.monthLabel.text = "monthText"
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "goToDay" {
+            
+            // Get the destination view controller
+            let dayVC:DayViewController = segue.destination as! DayViewController
+            dayVC.date = self.selectedDate
+        }
+        
     }
 }
 

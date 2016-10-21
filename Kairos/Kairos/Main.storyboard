@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -57,23 +56,11 @@
                     <view key="view" contentMode="scaleToFill" id="ReS-mC-aj8" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="APL-r5-GCf">
-                                <frame key="frameInset" minX="235" minY="592" width="106" height="30"/>
-                                <state key="normal" title="Go To Day"/>
-                                <connections>
-                                    <segue destination="Tej-1u-sq1" kind="show" identifier="goToDay" id="B1p-Ik-xF6"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="APL-r5-GCf" secondAttribute="trailing" constant="18" id="A67-WO-mpZ"/>
-                            <constraint firstItem="XIB-FZ-Fk6" firstAttribute="top" secondItem="APL-r5-GCf" secondAttribute="bottom" constant="45" id="iiH-Kg-cok"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="ReS-mC-aj8" id="OZk-0h-XgP"/>
+                        <segue destination="Tej-1u-sq1" kind="show" identifier="goToDay" id="Njd-en-ZxF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rM-p9-1Oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -92,20 +79,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-qu-1Aa">
-                                <frame key="frameInset" minX="152" minY="323" width="71" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="dayViewDateText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-qu-1Aa">
+                                <frame key="frameInset" minX="64" minY="323" width="229" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Js-qu-1Aa" firstAttribute="centerY" secondItem="SjP-6c-bnm" secondAttribute="centerY" id="8qC-Q8-MIR"/>
+                            <constraint firstItem="7Js-qu-1Aa" firstAttribute="centerX" secondItem="SjP-6c-bnm" secondAttribute="centerX" id="SLx-5X-SNR"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dayViewDateText" destination="7Js-qu-1Aa" id="zsm-OO-SJq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5S-7D-TUu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3151" y="194"/>
+            <point key="canvasLocation" x="3149.5999999999999" y="193.85307346326837"/>
         </scene>
         <!--Year View-->
         <scene sceneID="9CF-Gh-O4l">
