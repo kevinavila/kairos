@@ -2,9 +2,13 @@
 Kairos iOS App
 
 Contributions:
+
 -Login Screen
+
 -Facebook Integration
+
 -Navigation Hierarchy (Year, Month, Day)
+
 -Calendar (about halfway complete)
 
 Deviations:
