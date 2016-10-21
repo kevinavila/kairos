@@ -17,6 +17,8 @@
 		DB587B731DA80468005D61BB /* KairosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B721DA80468005D61BB /* KairosTests.swift */; };
 		DB587B7E1DA80468005D61BB /* KairosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B7D1DA80468005D61BB /* KairosUITests.swift */; };
 		DB5EB4121DAEEEBB00959DAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB5EB4111DAEEEBB00959DAC /* GoogleService-Info.plist */; };
+		DB9F4A9B1DB992FA00B1D2D9 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F4A9A1DB992FA00B1D2D9 /* CellView.swift */; };
+		DB9F4A9D1DB9A46900B1D2D9 /* CellView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9F4A9C1DB9A46900B1D2D9 /* CellView.xib */; };
 		DBCE5C811DB6E1CA00580F67 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBCE5C801DB6E1CA00580F67 /* Main.storyboard */; };
 		DBCE5C831DB6E24F00580F67 /* MonthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE5C821DB6E24F00580F67 /* MonthController.swift */; };
 		DBCE5C851DB6E95500580F67 /* YearController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCE5C841DB6E95500580F67 /* YearController.swift */; };
@@ -64,6 +66,8 @@
 		DB587B7F1DA80468005D61BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5EB4111DAEEEBB00959DAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB5EB4131DAF030300959DAC /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		DB9F4A9A1DB992FA00B1D2D9 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		DB9F4A9C1DB9A46900B1D2D9 /* CellView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellView.xib; sourceTree = "<group>"; };
 		DBCE5C801DB6E1CA00580F67 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		DBCE5C821DB6E24F00580F67 /* MonthController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthController.swift; sourceTree = "<group>"; };
 		DBCE5C841DB6E95500580F67 /* YearController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearController.swift; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				DB587B5D1DA80467005D61BB /* AppDelegate.swift */,
 				DB587B5F1DA80467005D61BB /* LoginController.swift */,
 				DBCE5C801DB6E1CA00580F67 /* Main.storyboard */,
+				DB9F4A9C1DB9A46900B1D2D9 /* CellView.xib */,
+				DB9F4A9A1DB992FA00B1D2D9 /* CellView.swift */,
 				DBCE5C841DB6E95500580F67 /* YearController.swift */,
 				DBCE5C821DB6E24F00580F67 /* MonthController.swift */,
 				DBECA46D1DB1BF8E0006C287 /* NavigationController.swift */,
@@ -296,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9F4A9D1DB9A46900B1D2D9 /* CellView.xib in Resources */,
 				DB587B681DA80467005D61BB /* LaunchScreen.storyboard in Resources */,
 				DB5EB4121DAEEEBB00959DAC /* GoogleService-Info.plist in Resources */,
 				DB587B651DA80467005D61BB /* Assets.xcassets in Resources */,
@@ -453,6 +460,7 @@
 				DBECA46E1DB1BF8F0006C287 /* NavigationController.swift in Sources */,
 				DB587B5E1DA80467005D61BB /* AppDelegate.swift in Sources */,
 				DBECA46C1DB1BAB50006C287 /* DayViewController.swift in Sources */,
+				DB9F4A9B1DB992FA00B1D2D9 /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
