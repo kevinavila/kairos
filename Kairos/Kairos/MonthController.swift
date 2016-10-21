@@ -83,7 +83,8 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         let headerCell = (header as? MonthHeader)
         let month = self.globalCalendarObject.component(Calendar.Component.month, from: range.start)
         let monthNames = DateFormatter().monthSymbols as [String]
-        headerCell?.monthLabel.text = monthNames[month]
+        // Month name is one behind: FIX
+        headerCell?.monthLabel.text = monthNames[month-1]
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
