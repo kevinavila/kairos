@@ -16,9 +16,14 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.edgesForExtendedLayout = []
+        
         calendarView.dataSource = self
         calendarView.delegate = self
         calendarView.registerCellViewXib(file: "CellView") // Registering your cell is manditory
+        
+        // No spaces between cells
+        calendarView.cellInset = CGPoint(x: 0, y: 0)
     }
     
     // Return parameters to configure the calendar
@@ -26,11 +31,11 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy MM dd"
         
-        let startDate = formatter.date(from: "2016 02 01")! // You can use date generated from a formatter
+        let startDate = formatter.date(from: "1995 01 01")! // You can use date generated from a formatter
         let endDate = Date()                                // You can also use dates created from this function
         let parameters = ConfigurationParameters(startDate: startDate,
                                                  endDate: endDate,
-                                                 numberOfRows: 6,
+                                                 numberOfRows: 5,
                                                  calendar: Calendar(identifier: .gregorian), // This parameter will be removed in version 6.0.1
                                                  generateInDates: .forAllMonths,
                                                  generateOutDates: .tillEndOfGrid,
@@ -47,9 +52,20 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         
         // Setup text color
         if cellState.dateBelongsTo == .thisMonth {
-            myCustomCell.dayLabel.textColor = UIColor.black
+            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
         } else {
-            myCustomCell.dayLabel.textColor = UIColor.gray
+            myCustomCell.isHidden = true
         }
+    }
+}
+
+extension UIColor {
+    convenience init(colorWithHexValue value: Int, alpha:CGFloat = 1.0){
+        self.init(
+            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(value & 0x0000FF) / 255.0,
+            alpha: alpha
+        )
     }
 }

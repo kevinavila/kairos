@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="76" y="194"/>
         </scene>
-        <!--Month View-->
+        <!--Month Controller-->
         <scene sceneID="Wj6-cb-iew">
             <objects>
-                <viewController restorationIdentifier="monthController" storyboardIdentifier="monthController" title="Month View" id="LfP-as-eqI" customClass="MonthController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="monthController" storyboardIdentifier="monthController" id="LfP-as-eqI" customClass="MonthController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3JF-AK-yoQ"/>
                         <viewControllerLayoutGuide type="bottom" id="XIB-FZ-Fk6"/>
@@ -66,7 +66,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="APL-r5-GCf" secondAttribute="trailing" constant="18" id="A67-WO-mpZ"/>
                             <constraint firstItem="XIB-FZ-Fk6" firstAttribute="top" secondItem="APL-r5-GCf" secondAttribute="bottom" constant="45" id="iiH-Kg-cok"/>

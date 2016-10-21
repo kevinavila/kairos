@@ -22,24 +22,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        // Uncomment to allow app to remember login info
+        UIApplication.shared.statusBarStyle = .lightContent
+        if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+            statusBar.backgroundColor = UIColor.black
+        }
         
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        
-//        if let window = self.window {
-//            if (FBSDKAccessToken.current() != nil) {
-//                let navController = storyboard.instantiateViewController(withIdentifier: "navController")
-//                let monthController = storyboard.instantiateViewController(withIdentifier: "monthController")
-//                let dayViewController = storyboard.instantiateViewController(withIdentifier: "dayViewController")
-//                
-//                window.rootViewController = navController
-//                (window.rootViewController as! UINavigationController).pushViewController(monthController, animated: false)
-//                (window.rootViewController as! UINavigationController).pushViewController(dayViewController, animated: false)
-//            } else {
-//                let loginController = storyboard.instantiateViewController(withIdentifier: "loginController")
-//                window.rootViewController = loginController
-//            }
-//        }
+        // Uncomment to allow app to remember login info
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let window = self.window {
+            if (FBSDKAccessToken.current() != nil) {
+                let navController = storyboard.instantiateViewController(withIdentifier: "navController")
+                let monthController = storyboard.instantiateViewController(withIdentifier: "monthController")
+                let dayViewController = storyboard.instantiateViewController(withIdentifier: "dayViewController")
+                
+                window.rootViewController = navController
+                (window.rootViewController as! UINavigationController).pushViewController(monthController, animated: false)
+                (window.rootViewController as! UINavigationController).pushViewController(dayViewController, animated: false)
+            } else {
+                let loginController = storyboard.instantiateViewController(withIdentifier: "loginController")
+                window.rootViewController = loginController
+            }
+        }
         
         return true
     }
