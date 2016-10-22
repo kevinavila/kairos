@@ -29,15 +29,18 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        self.facebookLoginButton.isHidden = true
+        
         if error != nil {
             print(error!.localizedDescription)
+            self.facebookLoginButton.isHidden = false
             return
-        }
-        
-        if (FBSDKAccessToken.current() != nil) {
+        } else if (result.isCancelled)  { // User canceled login
+            self.facebookLoginButton.isHidden = false
+        } else { // User successfully logged in
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-                if error != nil {
+                if (error != nil) {
                     print(error!.localizedDescription)
                 }
                 print("User logged in with facebook...")
@@ -56,6 +59,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
         try! FIRAuth.auth()!.signOut()
+        FBSDKAccessToken.setCurrent(nil)
         print("User logged out of facebook...")
     }
     
