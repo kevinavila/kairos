@@ -19,6 +19,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        facebookLoginButton.readPermissions = ["public_profile", "email"]
         facebookLoginButton.delegate = self
     }
 
@@ -33,18 +34,21 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         
-        let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-        FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            print("User logged in with facebook...")
-            
-            // Initialize navigation controller
-            self.performSegue(withIdentifier: "navSegue", sender: self)
-
-        })
+        if (FBSDKAccessToken.current() != nil) {
+            let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
+                print("User logged in with facebook...")
+                
+                // Initialize navigation controller
+                self.performSegue(withIdentifier: "navSegue", sender: self)
+            })
+        }
+        
     }
+    
     
     func loginButtonWillLogin(_ loginButton: FBSDKLoginButton!) -> Bool {
         return true
