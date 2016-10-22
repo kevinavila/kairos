@@ -14,6 +14,7 @@ import FBSDKLoginKit
 class LoginController: UIViewController, FBSDKLoginButtonDelegate {
 
     @IBOutlet weak var facebookLoginButton: FBSDKLoginButton!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +31,16 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
         self.facebookLoginButton.isHidden = true
+        loadingSpinner.startAnimating()
         
         if error != nil {
             print(error!.localizedDescription)
             self.facebookLoginButton.isHidden = false
+            loadingSpinner.stopAnimating()
             return
         } else if (result.isCancelled)  { // User canceled login
             self.facebookLoginButton.isHidden = false
+            loadingSpinner.stopAnimating()
         } else { // User successfully logged in
             let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
             FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in

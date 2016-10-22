@@ -27,9 +27,14 @@
                                 <frame key="frameInset" minX="67" minY="483" width="240" height="54"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qRm-gf-4GK">
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qRm-gf-4GK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AKo-7L-5Rn"/>
+                            <constraint firstItem="qRm-gf-4GK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="I11-U1-kmz"/>
                             <constraint firstItem="7k1-y4-AhJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MKu-uB-WGt"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7k1-y4-AhJ" secondAttribute="bottom" constant="130" id="TJk-xg-kp4"/>
                             <constraint firstItem="ans-4t-0fK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="168" id="UAg-FC-20k"/>
@@ -38,6 +43,7 @@
                     </view>
                     <connections>
                         <outlet property="facebookLoginButton" destination="7k1-y4-AhJ" id="TpN-Qd-HEB"/>
+                        <outlet property="loadingSpinner" destination="qRm-gf-4GK" id="8FE-Pz-m8D"/>
                         <segue destination="y2s-6v-gW0" kind="show" identifier="navSegue" id="RME-Ne-vle"/>
                     </connections>
                 </viewController>
