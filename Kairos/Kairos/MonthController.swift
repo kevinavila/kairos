@@ -27,6 +27,11 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         
         // No spaces between cells
         calendarView.cellInset = CGPoint(x: 0, y: 0)
+        
+        calendarView.reloadData()
+        
+        // After reloading. Scroll to your selected date, and setup your calendar
+        calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: false, animateScroll: false)
     }
     
     // Return parameters to configure the calendar
@@ -51,8 +56,6 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     func calendar(_ calendar: JTAppleCalendarView, willDisplayCell cell: JTAppleDayCellView, date: Date, cellState: CellState) {
         let myCustomCell = cell as! CellView
         
-        
-        
         // Setup Cell text
         myCustomCell.dayLabel.text = cellState.text
         
@@ -60,7 +63,7 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         if cellState.dateBelongsTo == .thisMonth {
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
         } else {
-            myCustomCell.isHidden = true
+            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x575757)
         }
     }
     
@@ -73,6 +76,10 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         }
     }
     
+    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
+        //print("Scroll")
+    }
+    
     // This sets the height of your header
     func calendar(_ calendar: JTAppleCalendarView, sectionHeaderSizeFor range: (start: Date, end: Date), belongingTo month: Int) -> CGSize {
         return CGSize(width: 200, height: 150)
@@ -81,9 +88,8 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     // This setups the display of your header
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeader)
-        let month = self.globalCalendarObject.component(Calendar.Component.month, from: range.start)
+        let month = self.globalCalendarObject.component(Calendar.Component.month, from: range.end)
         let monthNames = DateFormatter().monthSymbols as [String]
-        // Month name is one behind: FIX
         headerCell?.monthLabel.text = monthNames[month-1]
     }
     
