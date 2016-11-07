@@ -14,6 +14,7 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // Date information
     var year = Calendar.current.component(Calendar.Component.year, from: Date())
+    var month = Calendar.current.component(Calendar.Component.month, from: Date())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +30,14 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "yearCell", for: indexPath) as! YearCell
+        
         let yearText = self.year - indexPath.row
         cell.yearLabel.text = String(yearText)
+        
+        // Highlight current month of current year
+        if (yearText == self.year) {
+            cell.monthButtons[self.month-1].titleLabel?.textColor = UIColor(colorWithHexValue: 0x008080)
+        }
 
         return cell
     }
