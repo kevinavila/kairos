@@ -35,6 +35,10 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    @IBAction func monthTapped(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: "yearToMonth", sender: self)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         return
     }

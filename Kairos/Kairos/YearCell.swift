@@ -11,6 +11,7 @@ import UIKit
 class YearCell: UITableViewCell {
     
     @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet var monthButtons: [UIButton]!
     
     override func awakeFromNib() {
         super.awakeFromNib()
