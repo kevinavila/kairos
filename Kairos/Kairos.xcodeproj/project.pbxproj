@@ -10,6 +10,7 @@
 		02BCC3D338E91DF6B4B9D0C4 /* Pods_Kairos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891B3D3758254966C5795AD6 /* Pods_Kairos.framework */; };
 		98791111F3D5ABE716D7CEBC /* Pods_KairosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B0802436C7BB371DCC55F67 /* Pods_KairosTests.framework */; };
 		CC52CEDA77BE342C08D9D4F0 /* Pods_KairosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B22D7ECB0EB86141717B734 /* Pods_KairosUITests.framework */; };
+		DB1A13A81DD0386500C30C1F /* YearCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1A13A71DD0386500C30C1F /* YearCell.swift */; };
 		DB587B5E1DA80467005D61BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B5D1DA80467005D61BB /* AppDelegate.swift */; };
 		DB587B601DA80467005D61BB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B5F1DA80467005D61BB /* LoginController.swift */; };
 		DB587B651DA80467005D61BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB587B641DA80467005D61BB /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		891B3D3758254966C5795AD6 /* Pods_Kairos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kairos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36B5CFD6F9653800715DAF5 /* Pods-Kairos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kairos.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Kairos/Pods-Kairos.debug.xcconfig"; sourceTree = "<group>"; };
 		C415490AB308A2172A78B3FB /* Pods-KairosUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KairosUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KairosUITests/Pods-KairosUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB1A13A71DD0386500C30C1F /* YearCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearCell.swift; sourceTree = "<group>"; };
 		DB587B5A1DA80467005D61BB /* Kairos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kairos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB587B5D1DA80467005D61BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB587B5F1DA80467005D61BB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				DB89A3711DB9DD2B00FEF7F3 /* MonthHeader.swift */,
 				DB587B5F1DA80467005D61BB /* LoginController.swift */,
 				DBCE5C801DB6E1CA00580F67 /* Main.storyboard */,
+				DB1A13A71DD0386500C30C1F /* YearCell.swift */,
 				DB9F4A9C1DB9A46900B1D2D9 /* CellView.xib */,
 				DB89A36F1DB9DBFA00FEF7F3 /* MonthHeader.xib */,
 				DB9F4A9A1DB992FA00B1D2D9 /* CellView.swift */,
@@ -463,6 +466,7 @@
 			files = (
 				DB587B601DA80467005D61BB /* LoginController.swift in Sources */,
 				DBCE5C831DB6E24F00580F67 /* MonthController.swift in Sources */,
+				DB1A13A81DD0386500C30C1F /* YearCell.swift in Sources */,
 				DBCE5C851DB6E95500580F67 /* YearController.swift in Sources */,
 				DB89A3721DB9DD2B00FEF7F3 /* MonthHeader.swift in Sources */,
 				DBECA46E1DB1BF8F0006C287 /* NavigationController.swift in Sources */,
