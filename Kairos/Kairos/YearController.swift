@@ -13,7 +13,7 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     // Date information
-    let year = Calendar.current.component(Calendar.Component.year, from: Date())
+    var year = Calendar.current.component(Calendar.Component.year, from: Date())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,8 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "yearCell", for: indexPath) as! YearCell
-        cell.yearLabel.text = String(self.year)
+        let yearText = self.year - indexPath.row
+        cell.yearLabel.text = String(yearText)
 
         return cell
     }
