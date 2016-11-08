@@ -8,16 +8,26 @@
 
 import UIKit
 
-class DayViewController: UIViewController {
+class DayViewController: UIViewController, UITextViewDelegate {
     
     // Set when user clicks on a date in the month view
     var date:Date? = nil
     
     @IBOutlet weak var dayViewDateText: UILabel!
     
+    // Image views
+    @IBOutlet weak var imageView1: UIImageView!
+    @IBOutlet weak var imageView2: UIImageView!
+    @IBOutlet weak var imageView3: UIImageView!
+    @IBOutlet weak var imageBin: UIImageView!
+    
+    @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        textView.delegate = self
         
         if date != nil {
             let dateFormatter = DateFormatter()
@@ -28,7 +38,20 @@ class DayViewController: UIViewController {
             print(selectedDateString)
         }
         
-        self.navigationItem.rightBarButtonItem = self.editButtonItem   
+        // Change border color of image views
+        self.imageView1.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
+        self.imageView2.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
+        self.imageView3.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
+        self.imageBin.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
+        
+        self.imageView1.layer.borderWidth = 1.0
+        self.imageView2.layer.borderWidth = 1.0
+        self.imageView3.layer.borderWidth = 1.0
+        self.imageBin.layer.borderWidth = 1.0
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
+        textView.endEditing(true)
     }
     
     override func didReceiveMemoryWarning() {
