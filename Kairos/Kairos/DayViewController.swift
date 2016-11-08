@@ -27,7 +27,8 @@ class DayViewController: UIViewController {
             dayViewDateText.text = selectedDateString
             print(selectedDateString)
         }
-    
+        
+        self.navigationItem.rightBarButtonItem = self.editButtonItem   
     }
     
     override func didReceiveMemoryWarning() {

@@ -64,6 +64,7 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
         } else {
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x575757)
+            // Make cell unselectable
         }
     }
     

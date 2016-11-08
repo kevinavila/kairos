@@ -34,7 +34,7 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let yearText = self.year - indexPath.row
         cell.yearLabel.text = String(yearText)
         
-        // Highlight current month of current year
+        // Highlight current month of current year: PARTIALLY WORKS
         if (yearText == self.year) {
             cell.monthButtons[self.month-1].titleLabel?.textColor = UIColor(colorWithHexValue: 0x008080)
         }
