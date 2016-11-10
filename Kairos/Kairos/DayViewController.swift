@@ -8,7 +8,8 @@
 
 import UIKit
 
-class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate {
+class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate,
+UINavigationControllerDelegate {
     
     // Set when user clicks on a date in the month view
     var date:Date? = nil
@@ -64,6 +65,13 @@ class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDeleg
             textView.endEditing(true)
         } else {
             print("tapped image view 1")
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+                let imagePicker = UIImagePickerController()
+                imagePicker.delegate = self
+                imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+                //imagePicker.allowsEditing = true
+                self.present(imagePicker, animated: true, completion: nil)
+            }
         }
     }
     
