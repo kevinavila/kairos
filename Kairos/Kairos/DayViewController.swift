@@ -17,12 +17,13 @@ UINavigationControllerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dayViewDateText: UILabel!
     var keyboardIsVisible: Bool! = false
+    var currentImageView: Int! = 0
     
     // Button image views
     @IBOutlet weak var imageView1: UIButton!
-    @IBOutlet weak var imageView2: UIImageView!
-    @IBOutlet weak var imageView3: UIImageView!
-    @IBOutlet weak var imageBin: UIImageView!
+    @IBOutlet weak var imageView2: UIButton!
+    @IBOutlet weak var imageView3: UIButton!
+    @IBOutlet weak var imageBin: UIButton!
     
     @IBOutlet weak var textView: UITextView!
     
@@ -61,19 +62,68 @@ UINavigationControllerDelegate {
     // Image view functions
     
     @IBAction func tappedImageView1(_ sender: AnyObject) {
+        currentImageView = 1
         if (keyboardIsVisible == true) {
-            textView.endEditing(true)
+            dismissKeyboard(self)
         } else {
-            print("tapped image view 1")
+            print("Tapped image view 1")
+            imagePickerHelper()
+        }
+    }
+    
+    @IBAction func tappedImageView2(_ sender: AnyObject) {
+        currentImageView = 2
+        if (keyboardIsVisible == true) {
+            dismissKeyboard(self)
+        } else {
+            print("Tapped image view 2")
+            imagePickerHelper()
+        }
+    }
+    
+    @IBAction func tappedImageView3(_ sender: AnyObject) {
+        currentImageView = 3
+        if (keyboardIsVisible == true) {
+            dismissKeyboard(self)
+        } else {
+            print("Tapped image view 3")
+            imagePickerHelper()
+        }
+    }
+    
+    @IBAction func tappedImageBin(_ sender: AnyObject) {
+        currentImageView = 4
+        if (keyboardIsVisible == true) {
+            dismissKeyboard(self)
+        } else {
+            print("Tapped image bin")
             imagePickerHelper()
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            imageView1.contentMode = .scaleAspectFit
-            imageView1.setImage(pickedImage, for: UIControlState.normal)
+            var imageView: UIButton!
+            switch currentImageView {
+            case 1:
+                imageView = imageView1
+            case 2:
+                imageView = imageView2
+            case 3:
+                imageView = imageView3
+            case 4:
+                imageView = imageBin
+            default:
+                imageView = UIButton()
+                print("No image view selected")
+            }
+            imageView.contentMode = .scaleAspectFit
+            imageView.setImage(pickedImage, for: UIControlState.normal)
         }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     }
     
