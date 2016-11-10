@@ -272,16 +272,22 @@
 				TargetAttributes = {
 					DB587B591DA80467005D61BB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 23BHDPQ4LF;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					DB587B6D1DA80468005D61BB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 23BHDPQ4LF;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = DB587B591DA80467005D61BB;
 					};
 					DB587B781DA80468005D61BB = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 23BHDPQ4LF;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 						TestTargetID = DB587B591DA80467005D61BB;
 					};
 				};
@@ -536,6 +542,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -581,6 +588,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -607,9 +615,11 @@
 			baseConfigurationReference = A36B5CFD6F9653800715DAF5 /* Pods-Kairos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23BHDPQ4LF;
 				INFOPLIST_FILE = Kairos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BDP.Kairos;
+				PRODUCT_BUNDLE_IDENTIFIER = "BDP-Kevin.Kairos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -620,9 +630,11 @@
 			baseConfigurationReference = 734855121C465C9EC72F85F4 /* Pods-Kairos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23BHDPQ4LF;
 				INFOPLIST_FILE = Kairos/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BDP.Kairos;
+				PRODUCT_BUNDLE_IDENTIFIER = "BDP-Kevin.Kairos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -633,6 +645,8 @@
 			baseConfigurationReference = 73B376823AE0F518FC7DD51E /* Pods-KairosTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23BHDPQ4LF;
 				INFOPLIST_FILE = KairosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BDP.KairosTests;
@@ -647,6 +661,8 @@
 			baseConfigurationReference = F69A90852899038A1CCDB204 /* Pods-KairosTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23BHDPQ4LF;
 				INFOPLIST_FILE = KairosTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BDP.KairosTests;
@@ -660,6 +676,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C415490AB308A2172A78B3FB /* Pods-KairosUITests.debug.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23BHDPQ4LF;
 				INFOPLIST_FILE = KairosUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BDP.KairosUITests;
@@ -674,6 +692,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2EF655D122E05DE7534EC440 /* Pods-KairosUITests.release.xcconfig */;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 23BHDPQ4LF;
 				INFOPLIST_FILE = KairosUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BDP.KairosUITests;
