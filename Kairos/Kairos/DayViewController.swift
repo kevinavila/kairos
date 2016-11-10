@@ -15,9 +15,10 @@ class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDeleg
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dayViewDateText: UILabel!
+    var keyboardIsVisible: Bool! = false
     
-    // Image views
-    @IBOutlet weak var imageView1: UIImageView!
+    // Button image views
+    @IBOutlet weak var imageView1: UIButton!
     @IBOutlet weak var imageView2: UIImageView!
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageBin: UIImageView!
@@ -30,6 +31,10 @@ class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDeleg
         
         textView.delegate = self
         scrollView.delegate = self
+        
+        // Notifications for when keyboard appears or disappears
+        NotificationCenter.default.addObserver(self, selector: #selector(DayViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(DayViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
         if date != nil {
             let dateFormatter = DateFormatter()
@@ -52,6 +57,18 @@ class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDeleg
         self.imageBin.layer.borderWidth = 1.0
     }
     
+    // Image view functions
+    
+    @IBAction func tappedImageView1(_ sender: AnyObject) {
+        if (keyboardIsVisible == true) {
+            textView.endEditing(true)
+        } else {
+            print("tapped image view 1")
+        }
+    }
+    
+    // Text view functions
+    
     func textViewDidChange(_ textView: UITextView) {
         let fixedWidth = textView.frame.size.width
         textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
@@ -61,8 +78,36 @@ class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDeleg
         textView.frame = newFrame
     }
     
+    // Keyboard functions
+    
+    func keyboardWillShow(notification:NSNotification) {
+        adjustingHeight(show: true, notification: notification)
+        keyboardIsVisible = true
+    }
+    
+    func keyboardWillHide(notification:NSNotification) {
+        adjustingHeight(show: false, notification: notification)
+        keyboardIsVisible = false
+    }
+    
+    func adjustingHeight(show:Bool, notification:NSNotification) {
+        var userInfo = notification.userInfo!
+        let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let changeInHeight = (keyboardFrame.height + 40) * (show ? 1 : -1)
+//        UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
+//            self.bottomConstraint.constant += changeInHeight
+//        })
+    }
+    
     @IBAction func dismissKeyboard(_ sender: AnyObject) {
         textView.endEditing(true)
+    }
+    
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func didReceiveMemoryWarning() {
