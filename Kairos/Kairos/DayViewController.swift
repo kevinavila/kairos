@@ -65,13 +65,25 @@ UINavigationControllerDelegate {
             textView.endEditing(true)
         } else {
             print("tapped image view 1")
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
-                let imagePicker = UIImagePickerController()
-                imagePicker.delegate = self
-                imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-                //imagePicker.allowsEditing = true
-                self.present(imagePicker, animated: true, completion: nil)
-            }
+            imagePickerHelper()
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            imageView1.contentMode = .scaleAspectFit
+            imageView1.setImage(pickedImage, for: UIControlState.normal)
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerHelper() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            //imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
         }
     }
     
