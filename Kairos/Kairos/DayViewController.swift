@@ -26,6 +26,7 @@ UINavigationControllerDelegate {
     @IBOutlet weak var imageBin: UIButton!
     
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var audioButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,16 +48,18 @@ UINavigationControllerDelegate {
             print(selectedDateString)
         }
         
-        // Change border color of image views
+        // Change border color of image views and audio button
         self.imageView1.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         self.imageView2.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         self.imageView3.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         self.imageBin.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
+        self.audioButton.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         
         self.imageView1.layer.borderWidth = 1.0
         self.imageView2.layer.borderWidth = 1.0
         self.imageView3.layer.borderWidth = 1.0
         self.imageBin.layer.borderWidth = 1.0
+        self.audioButton.layer.borderWidth = 1.0
     }
     
     // Image view functions

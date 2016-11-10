@@ -85,12 +85,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-oJ-VEK" userLabel="Audio Button">
+                                <frame key="frameInset" minY="600" width="250" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Audio">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="fey-ze-jNJ" kind="show" identifier="dayViewToAI" id="Ptt-BC-vYm"/>
+                                </connections>
+                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-bO-xeZ">
-                                <frame key="frameInset" width="375" height="667"/>
+                                <frame key="frameInset" width="375" height="592"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sdg-al-w4p" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                        <rect key="frame" x="0.0" y="60" width="375" height="607"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dayViewDateText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-qu-1Aa">
@@ -170,6 +180,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="audioButton" destination="Yye-oJ-VEK" id="OKk-WC-4xK"/>
                         <outlet property="dayViewDateText" destination="7Js-qu-1Aa" id="zsm-OO-SJq"/>
                         <outlet property="imageBin" destination="jEc-DQ-mmr" id="zyj-3B-ys2"/>
                         <outlet property="imageView1" destination="Ktj-PO-gHk" id="XM5-xr-vso"/>
@@ -187,6 +198,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3149.5999999999999" y="193.85307346326837"/>
+        </scene>
+        <!--Audio Interface-->
+        <scene sceneID="G8f-zg-BXc">
+            <objects>
+                <viewController restorationIdentifier="audioInterface" storyboardIdentifier="audioInterface" title="Audio Interface" id="fey-ze-jNJ" userLabel="Audio Interface" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="C3Y-Ge-cOi"/>
+                        <viewControllerLayoutGuide type="bottom" id="FxK-nD-U5C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tc4-Hc-Fdt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K6K-wu-12X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3945" y="194"/>
         </scene>
         <!--Year View-->
         <scene sceneID="9CF-Gh-O4l">
