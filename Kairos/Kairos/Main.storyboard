@@ -92,7 +92,7 @@
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fey-ze-jNJ" kind="show" identifier="dayViewToAI" id="Ptt-BC-vYm"/>
+                                    <segue destination="Tw8-wY-Yfe" kind="presentation" identifier="dayViewToAI" modalTransitionStyle="coverVertical" id="Ptt-BC-vYm"/>
                                 </connections>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-bO-xeZ">
@@ -202,7 +202,7 @@
         <!--Audio Interface-->
         <scene sceneID="G8f-zg-BXc">
             <objects>
-                <viewController restorationIdentifier="audioInterface" storyboardIdentifier="audioInterface" title="Audio Interface" id="fey-ze-jNJ" userLabel="Audio Interface" sceneMemberID="viewController">
+                <viewController restorationIdentifier="audioInterface" storyboardIdentifier="audioInterface" title="Audio Interface" id="fey-ze-jNJ" userLabel="Audio Interface" customClass="AudioInterface" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="C3Y-Ge-cOi"/>
                         <viewControllerLayoutGuide type="bottom" id="FxK-nD-U5C"/>
@@ -212,10 +212,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Audio Interface" id="xEG-qr-kzM" userLabel="Audio Interface Nav Item">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OUL-zp-IbN">
+                            <connections>
+                                <action selector="userClickedCancel:" destination="fey-ze-jNJ" id="7iE-u0-1VM"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gJw-gP-bY9">
+                            <connections>
+                                <action selector="userClickedDone:" destination="fey-ze-jNJ" id="S66-Al-cdZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6K-wu-12X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3945" y="194"/>
+            <point key="canvasLocation" x="4884" y="193.85307346326837"/>
         </scene>
         <!--Year View-->
         <scene sceneID="9CF-Gh-O4l">
@@ -438,6 +450,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkC-JB-4aP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860" y="194"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HRa-j7-vcr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tw8-wY-Yfe" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhd-2W-4je">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fey-ze-jNJ" kind="relationship" relationship="rootViewController" id="gvo-Yw-Swp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MYJ-wM-ekU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3944.8000000000002" y="193.85307346326837"/>
         </scene>
     </scenes>
 </document>
