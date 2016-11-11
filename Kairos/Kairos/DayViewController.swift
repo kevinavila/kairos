@@ -27,7 +27,6 @@ UINavigationControllerDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var audioButton: UIButton!
-    @IBOutlet weak var dvSaveButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -180,9 +179,7 @@ UINavigationControllerDelegate {
     
     // Save to database
     
-    @IBAction func dvSaveButtonClicked(_ sender: AnyObject) {
-        
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

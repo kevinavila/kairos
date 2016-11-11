@@ -86,19 +86,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ud9-Bu-M3t" userLabel="DV Save Button">
-                                <frame key="frameInset" minX="258" minY="600" width="117" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="SAVE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="dvSaveButtonClicked:" destination="Tej-1u-sq1" eventType="touchUpInside" id="FWD-Gz-Wd9"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-oJ-VEK" userLabel="Audio Button">
-                                <frame key="frameInset" minY="600" width="250" height="69"/>
+                                <frame key="frameInset" minY="600" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Audio">
                                     <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -194,7 +183,6 @@
                     <connections>
                         <outlet property="audioButton" destination="Yye-oJ-VEK" id="OKk-WC-4xK"/>
                         <outlet property="dayViewDateText" destination="7Js-qu-1Aa" id="zsm-OO-SJq"/>
-                        <outlet property="dvSaveButton" destination="ud9-Bu-M3t" id="DZQ-ic-n8K"/>
                         <outlet property="imageBin" destination="jEc-DQ-mmr" id="zyj-3B-ys2"/>
                         <outlet property="imageView1" destination="Ktj-PO-gHk" id="XM5-xr-vso"/>
                         <outlet property="imageView2" destination="Rh2-VO-Vzk" id="bI6-dw-Fhc"/>
