@@ -117,15 +117,20 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     func updateControls() {
         
-        UIView.animate(withDuration: 0.2) { () -> Void in
-            self.recordButton.titleLabel?.text = "STOP"
+//        UIView.animate(withDuration: 0.2) { () -> Void in
+//            self.recordButton.titleLabel?.text = "STOP"
+//        }
+        if (recorder.isRecording) {
+            self.recordButton.setTitle("STOP", for: .normal)
+        } else {
+            self.recordButton.setTitle("Record", for: .normal)
         }
         
         if let _ = player {
-            playButton.titleLabel?.text = "STOP"
+            playButton.setTitle("STOP", for: .normal)
             recordButton.isEnabled = false
         } else {
-            playButton.titleLabel?.text = "Play"
+            playButton.setTitle("Play", for: .normal)
             recordButton.isEnabled = true
         }
         
