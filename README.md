@@ -1,7 +1,7 @@
 # kairos
 Kairos iOS App
 
-Contributions:
+Contributions (As of Beta):
 
 -Login Screen
 
@@ -9,7 +9,27 @@ Contributions:
 
 -Navigation Hierarchy (Year, Month, Day)
 
--Calendar (about halfway complete)
+-Calendar
+
+-Day View (UI needs improvement)
+
+-Logging process (persistence needs to be completed)
 
 Deviations:
-I have not fully completed the calendar navigation mechanism, but the layout is there. The month view is almost done, and date selection works. The year view has yet to be implemented. I ran into unexpected issues with upgrading Xcode/Swift which slowed the process. My laptop is very low on disk space as well and has made the process of developing in Xcode extremely slow. Nonetheless, the calendar will be fully functional by the Beta release.
+The calendar mechanism is now fully functional with year, month, and day views properly integrated with each other. Aside from the UI needing improvement (currently waiting on icons and such), the main deviation is that only photos persist currently. Audio, video, and text still need to be saved. Also, the edit and view modes are implemented but the dynamic views still need to be implemented. Some slight design deviations worth mentioning are the year view (months are just words) and the removal of the save button on the bottom of the day view.
+
+Current list of what needs to be done:
+
+-Bug: Color of current month in year view
+-Bug: Color of un-selectable future months in year view
+-Bug: Image scaling and rotation in day view
+-Fix: Make date cells from different month un-selectable
+-Fix: Make month view vertical scrolling
+-Fix: Day view auto layout issues
+-Fix: Day view scroll view
+-To-do: Dynamic views in day view in view mode
+-To-do: Make video, audio, and text persist (as well as image bin)
+-To-do: Add waveform visualization for audio
+-To-do: Improve speed of image download
+-To-do: Implement image bin
+-To-do: Improve all around UI
