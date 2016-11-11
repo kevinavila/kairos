@@ -59,6 +59,8 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         NotificationCenter.default.removeObserver(self)
     }
     
+    // Recording functions
+    
     @IBAction func toggleRecord(sender: AnyObject) {
         
         timeTimer?.invalidate()
@@ -83,6 +85,8 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         }
     }
     
+    // Play functions
+    
     @IBAction func play(sender: AnyObject) {
         
         if let player = player {
@@ -105,6 +109,8 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         updateControls()
     }
     
+    // Cancel and save functions
+    
     @IBAction func userClickedCancel(_ sender: AnyObject) {
         cleanup()
         self.dismiss(animated: true, completion: nil)
@@ -114,6 +120,8 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         cleanup()
         self.dismiss(animated: true, completion: nil)
     }
+    
+    // Helper functions
     
     func updateControls() {
         
@@ -158,6 +166,13 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             player.stop()
             self.player = nil
         }
+    }
+    
+    // Playback delegate functions
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.player = nil
+        updateControls()
     }
 
 }
