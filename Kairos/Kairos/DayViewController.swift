@@ -17,6 +17,7 @@ UINavigationControllerDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dayViewDateText: UILabel!
     var keyboardIsVisible: Bool! = false
+    var inViewMode: Bool! = true
     var currentImageView: Int! = 0
     
     // Button image views
@@ -27,6 +28,7 @@ UINavigationControllerDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var audioButton: UIButton!
+    @IBOutlet weak var editSaveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +62,15 @@ UINavigationControllerDelegate {
         self.imageView3.layer.borderWidth = 1.0
         self.imageBin.layer.borderWidth = 1.0
         self.audioButton.layer.borderWidth = 1.0
+        
+        // Default to VIEW mode
+        textView.isEditable = false
+        audioButton.isEnabled = false
+        self.imageView1.isEnabled = false
+        self.imageView2.isEnabled = false
+        self.imageView3.isEnabled = false
+        self.imageBin.isEnabled = false
+        
     }
     
     // Image view functions
@@ -179,6 +190,30 @@ UINavigationControllerDelegate {
     
     // Save to database
     
+    @IBAction func editSaveToggle(_ sender: AnyObject) {
+        if (inViewMode == true) { // switch to edit mode
+            textView.isEditable = true
+            audioButton.isEnabled = true
+            self.imageView1.isEnabled = true
+            self.imageView2.isEnabled = true
+            self.imageView3.isEnabled = true
+            self.imageBin.isEnabled = true
+            
+            editSaveButton.title = "Save"
+            inViewMode = false
+        } else { // save and switch to view mode
+            textView.isEditable = false
+            audioButton.isEnabled = false
+            self.imageView1.isEnabled = false
+            self.imageView2.isEnabled = false
+            self.imageView3.isEnabled = false
+            self.imageBin.isEnabled = false
+            
+            editSaveButton.title = "Edit"
+            inViewMode = true
+        }
+        
+    }
 
     
     override func didReceiveMemoryWarning() {

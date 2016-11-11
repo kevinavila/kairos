@@ -177,12 +177,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Day View" id="1Nf-lK-fia" userLabel="Day View Nav Item">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="pxS-Ow-JNc"/>
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="pxS-Ow-JNc">
+                            <connections>
+                                <action selector="editSaveToggle:" destination="Tej-1u-sq1" id="Jcl-ZE-4Io"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="audioButton" destination="Yye-oJ-VEK" id="OKk-WC-4xK"/>
                         <outlet property="dayViewDateText" destination="7Js-qu-1Aa" id="zsm-OO-SJq"/>
+                        <outlet property="editSaveButton" destination="pxS-Ow-JNc" id="FR7-72-6ez"/>
                         <outlet property="imageBin" destination="jEc-DQ-mmr" id="zyj-3B-ys2"/>
                         <outlet property="imageView1" destination="Ktj-PO-gHk" id="XM5-xr-vso"/>
                         <outlet property="imageView2" destination="Rh2-VO-Vzk" id="bI6-dw-Fhc"/>
