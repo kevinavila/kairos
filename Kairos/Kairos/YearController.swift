@@ -40,7 +40,12 @@ class YearController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.monthButtons[self.month-1].titleLabel?.textColor = UIColor(colorWithHexValue: 0x008080)
             
             // make future months unclickable
-            
+            let rangeStart = self.month+1
+            for i in rangeStart..<13 {
+                cell.monthButtons[i-1].isEnabled = false
+                // Make unselectable months gray: PARTIALLY WORKS
+                cell.monthButtons[i-1].titleLabel?.textColor = UIColor(colorWithHexValue: 0x575757)
+            }
         }
 
         return cell
