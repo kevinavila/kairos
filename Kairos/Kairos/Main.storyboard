@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -210,7 +211,46 @@
                     <view key="view" contentMode="scaleToFill" id="tc4-Hc-Fdt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-g4-ANd">
+                                <fontDescription key="fontDescription" type="system" pointSize="63"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8G-zA-UhG">
+                                <frame key="frameInset" minX="91" minY="423" width="64" height="30"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleRecordWithSender:" destination="fey-ze-jNJ" eventType="touchUpInside" id="8t8-xm-pof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-yh-rEV">
+                                <frame key="frameInset" minX="238" minY="423" width="46" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playWithSender:" destination="fey-ze-jNJ" eventType="touchUpInside" id="LzA-AV-yew"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FxK-nD-U5C" firstAttribute="top" secondItem="i8G-zA-UhG" secondAttribute="bottom" constant="214" id="FAu-Qa-40t"/>
+                            <constraint firstItem="6ut-g4-ANd" firstAttribute="leading" secondItem="tc4-Hc-Fdt" secondAttribute="leadingMargin" constant="75" id="FFB-TC-WHu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="PmG-yh-rEV" secondAttribute="trailing" constant="75" id="Gkc-5M-gmy"/>
+                            <constraint firstItem="PmG-yh-rEV" firstAttribute="leading" secondItem="i8G-zA-UhG" secondAttribute="trailing" constant="83" id="POa-EI-yBd"/>
+                            <constraint firstItem="i8G-zA-UhG" firstAttribute="leading" secondItem="tc4-Hc-Fdt" secondAttribute="leadingMargin" constant="75" id="RoP-Id-1Gu"/>
+                            <constraint firstItem="6ut-g4-ANd" firstAttribute="top" secondItem="C3Y-Ge-cOi" secondAttribute="bottom" constant="144" id="X4m-97-VsM"/>
+                            <constraint firstItem="PmG-yh-rEV" firstAttribute="top" secondItem="6ut-g4-ANd" secondAttribute="bottom" constant="136" id="brA-Kt-YC2"/>
+                            <constraint firstItem="FxK-nD-U5C" firstAttribute="top" secondItem="6ut-g4-ANd" secondAttribute="bottom" constant="380" id="eb6-dQ-gTb"/>
+                            <constraint firstItem="PmG-yh-rEV" firstAttribute="leading" secondItem="i8G-zA-UhG" secondAttribute="trailing" constant="83" id="jGI-dj-yef"/>
+                            <constraint firstItem="FxK-nD-U5C" firstAttribute="top" secondItem="PmG-yh-rEV" secondAttribute="bottom" constant="214" id="khe-te-K1M"/>
+                            <constraint firstItem="i8G-zA-UhG" firstAttribute="top" secondItem="6ut-g4-ANd" secondAttribute="bottom" constant="136" id="oFd-QX-bx0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6ut-g4-ANd" secondAttribute="trailing" constant="75" id="ssm-AQ-iWx"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Audio Interface" id="xEG-qr-kzM" userLabel="Audio Interface Nav Item">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OUL-zp-IbN">
@@ -218,12 +258,18 @@
                                 <action selector="userClickedCancel:" destination="fey-ze-jNJ" id="7iE-u0-1VM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="gJw-gP-bY9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="gJw-gP-bY9">
                             <connections>
-                                <action selector="userClickedDone:" destination="fey-ze-jNJ" id="S66-Al-cdZ"/>
+                                <action selector="userClickedSave:" destination="fey-ze-jNJ" id="mTK-Fy-p8S"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="playButton" destination="PmG-yh-rEV" id="0Fr-Kh-0xA"/>
+                        <outlet property="recordButton" destination="i8G-zA-UhG" id="HE4-zc-Vmf"/>
+                        <outlet property="saveButton" destination="gJw-gP-bY9" id="kZ3-Fb-AaK"/>
+                        <outlet property="timeLabel" destination="6ut-g4-ANd" id="L4D-dX-czX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K6K-wu-12X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
