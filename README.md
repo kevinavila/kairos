@@ -20,16 +20,16 @@ The calendar mechanism is now fully functional with year, month, and day views p
 
 Current list of what needs to be done:
 
--Bug: Color of current month in year view
--Bug: Color of un-selectable future months in year view
--Bug: Image scaling and rotation in day view
--Fix: Make date cells from different month un-selectable
--Fix: Make month view vertical scrolling
--Fix: Day view auto layout issues
--Fix: Day view scroll view
--To-do: Dynamic views in day view in view mode
--To-do: Make video, audio, and text persist (as well as image bin)
--To-do: Add waveform visualization for audio
--To-do: Improve speed of image download
--To-do: Implement image bin
--To-do: Improve all around UI
+Bug: Color of current month in year view
+*Bug: Color of un-selectable future months in year view
+*Bug: Image scaling and rotation in day view
+*Fix: Make date cells from different month un-selectable
+*Fix: Make month view vertical scrolling
+*Fix: Day view auto layout issues
+*Fix: Day view scroll view
+*To-do: Dynamic views in day view in view mode
+*To-do: Make video, audio, and text persist (as well as image bin)
+*To-do: Add waveform visualization for audio
+*To-do: Improve speed of image download
+*To-do: Implement image bin
+*To-do: Improve all around UI
