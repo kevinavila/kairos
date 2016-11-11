@@ -56,6 +56,8 @@ UINavigationControllerDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(DayViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(DayViewController.keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         
+        // Populate day
+        // Should you cache?
         if date != nil {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -63,6 +65,8 @@ UINavigationControllerDelegate {
             let selectedDateString = dateFormatter.string(from: date!)
             dayViewDateText.text = selectedDateString
             print(selectedDateString)
+            
+            retrieveImages()
         }
         
         // Change border color of image views and audio button
@@ -234,6 +238,31 @@ UINavigationControllerDelegate {
     
     // Database functions
     
+    func retrieveImages() {
+        // NOTE: Switch to FirebaseUI for downloading images from storage
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+        let dateString = dateFormatter.string(from: date!)
+        
+        var counter:Int! = 0
+        for imageView in images {
+            let imageRef = storageRef.child(user.uid+"/"+dateString+"/images/image_\(counter!).jpg")
+                
+            // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            imageRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
+                if (error != nil) {
+                    print("Unable to download image.")
+                } else {
+                    if (data != nil) {
+                        imageView.setImage(UIImage(data: data!), for: .normal)
+                    }
+                }
+            }
+            counter = counter + 1
+        }
+    }
+    
     func saveImages() {
         if (user != nil) {
             let uploadMetadata = FIRStorageMetadata()
@@ -244,7 +273,7 @@ UINavigationControllerDelegate {
             dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
             let dateString = dateFormatter.string(from: date!)
             
-            // iterate through images and upload: ONLY WORKS FOR IV1, IV2, IV3
+            // iterate through images and upload: CURRENTLY ONLY WORKS FOR IV1, IV2, IV3
             var counter:Int! = 0
             for imageView in images {
                 if (imageView.currentImage != nil) {
