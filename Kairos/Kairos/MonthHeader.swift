@@ -12,5 +12,6 @@ class MonthHeader: JTAppleHeaderView {
     
     
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
     
 }

@@ -16,7 +16,6 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
-    //weak var audioRecorderDelegate: AudioRecorderViewControllerDelegate?
     
     var timeTimer: Timer!
     var milliseconds: Int! = 0

@@ -11,23 +11,47 @@
             <rect key="frame" x="0.0" y="0.0" width="449" height="140"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="monthText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6H-Dg-CyF">
-                    <frame key="frameInset" minX="29" minY="52" width="97" height="37"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="monthText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6H-Dg-CyF">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="298" id="Ysc-ve-fh9"/>
+                        <constraint firstAttribute="height" constant="36" id="wxh-0b-8xV"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YEAR" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fEy-kv-IIw">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="Hpe-w5-edc"/>
+                        <constraint firstAttribute="height" constant="22" id="Va6-Vv-hd7"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lS9-uy-0c3" userLabel="Divider">
+                    <frame key="frameInset" minY="139" width="449" height="1"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="y6H-Dg-CyF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GRl-g3-ecY"/>
-                <constraint firstItem="y6H-Dg-CyF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="29" id="ffW-rC-jMR"/>
+                <constraint firstItem="y6H-Dg-CyF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="A11-le-VUb"/>
+                <constraint firstItem="fEy-kv-IIw" firstAttribute="top" secondItem="y6H-Dg-CyF" secondAttribute="bottom" constant="1" id="BrF-Qw-Zhx"/>
+                <constraint firstItem="y6H-Dg-CyF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="THG-vT-SXS"/>
+                <constraint firstAttribute="trailing" secondItem="y6H-Dg-CyF" secondAttribute="trailing" constant="143" id="UdF-ZN-3jx"/>
+                <constraint firstAttribute="trailing" secondItem="fEy-kv-IIw" secondAttribute="trailing" constant="376" id="WbD-7c-S0j"/>
+                <constraint firstItem="fEy-kv-IIw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="aSQ-TT-vNy"/>
+                <constraint firstAttribute="bottom" secondItem="fEy-kv-IIw" secondAttribute="bottom" constant="75" id="pgz-Vh-FIA"/>
+                <constraint firstItem="fEy-kv-IIw" firstAttribute="top" secondItem="y6H-Dg-CyF" secondAttribute="bottom" constant="1" id="zL9-Ip-iru"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="monthLabel" destination="y6H-Dg-CyF" id="kam-Dq-oiQ"/>
+                <outlet property="yearLabel" destination="fEy-kv-IIw" id="X0z-Wt-CZu"/>
             </connections>
-            <point key="canvasLocation" x="69.5" y="210"/>
+            <point key="canvasLocation" x="70" y="211"/>
         </view>
     </objects>
 </document>

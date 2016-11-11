@@ -90,8 +90,10 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     func calendar(_ calendar: JTAppleCalendarView, willDisplaySectionHeader header: JTAppleHeaderView, range: (start: Date, end: Date), identifier: String) {
         let headerCell = (header as? MonthHeader)
         let month = self.globalCalendarObject.component(Calendar.Component.month, from: range.end)
+        let year = self.globalCalendarObject.component(Calendar.Component.year, from: range.end)
         let monthNames = DateFormatter().monthSymbols as [String]
         headerCell?.monthLabel.text = monthNames[month-1]
+        headerCell?.yearLabel.text = String(year)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
