@@ -194,6 +194,9 @@
                         <outlet property="imageView3" destination="QqN-43-vg4" id="Ii9-FK-Jfy"/>
                         <outlet property="scrollView" destination="aDI-bO-xeZ" id="IuE-kC-Avl"/>
                         <outlet property="textView" destination="paF-SA-Ped" id="si1-65-LRo"/>
+                        <outletCollection property="images" destination="Ktj-PO-gHk" collectionClass="NSMutableArray" id="ZQx-gY-l49"/>
+                        <outletCollection property="images" destination="Rh2-VO-Vzk" collectionClass="NSMutableArray" id="99h-hd-waW"/>
+                        <outletCollection property="images" destination="QqN-43-vg4" collectionClass="NSMutableArray" id="jbp-mR-uCl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h5S-7D-TUu" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseAuth
 
 class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -14,11 +16,18 @@ UINavigationControllerDelegate {
     // Set when user clicks on a date in the month view
     var date:Date? = nil
     
+    // Firebase variables
+    var user:FIRUser!
+    var storageRef:FIRStorageReference!
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dayViewDateText: UILabel!
     var keyboardIsVisible: Bool! = false
     var inViewMode: Bool! = true
     var currentImageView: Int! = 0
+    
+    @IBOutlet var images: [UIButton]!
+    
     
     // Button image views
     @IBOutlet weak var imageView1: UIButton!
@@ -33,6 +42,12 @@ UINavigationControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Firebase storage reference
+        let storage = FIRStorage.storage()
+        storageRef = storage.reference(forURL: "gs://kairos-7a0bc.appspot.com")
+        
+        user = FIRAuth.auth()?.currentUser
         
         textView.delegate = self
         scrollView.delegate = self
@@ -209,10 +224,45 @@ UINavigationControllerDelegate {
             self.imageView3.isEnabled = false
             self.imageBin.isEnabled = false
             
+            saveImages()
+            
             editSaveButton.title = "Edit"
             inViewMode = true
         }
         
+    }
+    
+    // Database functions
+    
+    func saveImages() {
+        if (user != nil) {
+            let uploadMetadata = FIRStorageMetadata()
+            uploadMetadata.contentType = "image/jpeg"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            let dateString = dateFormatter.string(from: date!)
+            
+            // iterate through images and upload: ONLY WORKS FOR IV1, IV2, IV3
+            var counter:Int! = 0
+            for imageView in images {
+                if (imageView.currentImage != nil) {
+                    let imageData = UIImageJPEGRepresentation(imageView.currentImage!, 0.8)
+                    let imageRef = storageRef.child(user.uid+"/"+dateString+"/images/image_\(counter!).jpg")
+                    
+                    imageRef.put(imageData!, metadata: uploadMetadata, completion: { (metadata, error) -> Void in
+                            if (error != nil) {
+                                print("Error uploading image: \(error?.localizedDescription)")
+                            } else {
+                                print("Successfully uploaded image")
+                            }
+                        })
+                    
+                }
+                counter = counter + 1
+            }
+        }
     }
 
     
