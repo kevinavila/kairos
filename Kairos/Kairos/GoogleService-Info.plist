@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>217577414047-aj2unr13q2lfns8u1r79v5khr5umaqq5.apps.googleusercontent.com</string>
+	<string>371816515793-a9no5ijf3tvh0kqm6p69rn54btikjpf3.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.217577414047-aj2unr13q2lfns8u1r79v5khr5umaqq5</string>
+	<string>com.googleusercontent.apps.371816515793-a9no5ijf3tvh0kqm6p69rn54btikjpf3</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC_lk8bX8jLSf5crXmBNTBT8lhJWwS7x5c</string>
+	<string>AIzaSyBGgAW1rvS4b8tezaA3QMHtU9RXdT5-xCc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>217577414047</string>
+	<string>371816515793</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>BDP.Kairos</string>
+	<string>BDP-Kevin.Kairos</string>
 	<key>PROJECT_ID</key>
-	<string>kairos-44427</string>
+	<string>kairos-7a0bc</string>
 	<key>STORAGE_BUCKET</key>
-	<string>kairos-44427.appspot.com</string>
+	<string>kairos-7a0bc.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true/>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:217577414047:ios:dc7e441a1fe6b4ba</string>
+	<string>1:371816515793:ios:b9fee733da499ac0</string>
 	<key>DATABASE_URL</key>
-	<string>https://kairos-44427.firebaseio.com</string>
+	<string>https://kairos-7a0bc.firebaseio.com</string>
 </dict>
 </plist>
