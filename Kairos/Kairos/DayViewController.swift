@@ -58,16 +58,17 @@ UINavigationControllerDelegate {
         
         // Populate day
         // Should you cache?
-        if date != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-            let selectedDateString = dateFormatter.string(from: date!)
-            dayViewDateText.text = selectedDateString
-            print(selectedDateString)
-            
-            retrieveImages()
+        if (date == nil) { // App was just opened. Go to current day.
+            date = Date()
         }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+        let selectedDateString = dateFormatter.string(from: date!)
+        dayViewDateText.text = selectedDateString
+        print(selectedDateString)
+        retrieveImages(dateString: selectedDateString)
+        
         
         // Change border color of image views and audio button
         self.imageView1.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
@@ -238,13 +239,8 @@ UINavigationControllerDelegate {
     
     // Database functions
     
-    func retrieveImages() {
+    func retrieveImages(dateString: String) {
         // NOTE: Switch to FirebaseUI for downloading images from storage
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-        let dateString = dateFormatter.string(from: date!)
-        
         var counter:Int! = 0
         for imageView in images {
             let imageRef = storageRef.child(user.uid+"/"+dateString+"/images/image_\(counter!).jpg")
@@ -293,7 +289,7 @@ UINavigationControllerDelegate {
             }
         }
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
