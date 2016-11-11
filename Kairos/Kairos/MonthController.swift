@@ -13,6 +13,7 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     
     @IBOutlet var calendarView: JTAppleCalendarView!
     var selectedDate:Date? = Date()
+    var scrollToDate:Date!
     var globalCalendarObject:Calendar = Calendar(identifier: .gregorian)
     
     override func viewDidLoad() {
@@ -31,7 +32,11 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         calendarView.reloadData()
         
         // After reloading. Scroll to your selected date, and setup your calendar
-        calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: false, animateScroll: false)
+        if (scrollToDate != nil) {
+            calendarView.scrollToDate(scrollToDate, triggerScrollToDateDelegate: false, animateScroll: false)
+        } else {
+            calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: false, animateScroll: false)
+        }
     }
     
     // Return parameters to configure the calendar
