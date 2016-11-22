@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseStorage
 import FirebaseAuth
+import FirebaseDatabase
 
 class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
@@ -19,6 +20,7 @@ UINavigationControllerDelegate {
     // Firebase variables
     var user:FIRUser!
     var storageRef:FIRStorageReference!
+    var databaseRef:FIRDatabaseReference!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var dayViewDateText: UILabel!
@@ -46,6 +48,8 @@ UINavigationControllerDelegate {
         // Firebase storage reference
         let storage = FIRStorage.storage()
         storageRef = storage.reference(forURL: "gs://kairos-7a0bc.appspot.com")
+        let database = FIRDatabase.database()
+        databaseRef = database.reference()
         
         user = FIRAuth.auth()?.currentUser
         
@@ -230,6 +234,7 @@ UINavigationControllerDelegate {
             self.imageBin.isEnabled = false
             
             saveImages()
+            saveText()
             
             editSaveButton.title = "Edit"
             inViewMode = true
@@ -287,6 +292,18 @@ UINavigationControllerDelegate {
                 }
                 counter = counter + 1
             }
+        }
+    }
+    
+    func saveText() {
+        if (user != nil) {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            let dateString = dateFormatter.string(from: date!)
+            
+            databaseRef.child(user.uid+"/"+dateString+"/text").setValue(self.textView.text!)
+            print("Saved text")
         }
     }
     
