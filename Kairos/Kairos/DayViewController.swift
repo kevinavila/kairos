@@ -72,6 +72,7 @@ UINavigationControllerDelegate {
         dayViewDateText.text = selectedDateString
         print(selectedDateString)
         retrieveImages(dateString: selectedDateString)
+        retrieveText(dateString: selectedDateString)
         
         
         // Change border color of image views and audio button
@@ -292,6 +293,20 @@ UINavigationControllerDelegate {
                 }
                 counter = counter + 1
             }
+        }
+    }
+    
+    func retrieveText(dateString: String) {
+        databaseRef.child(user.uid+"/"+dateString+"/text").observeSingleEvent(of: .value, with: { (snapshot) in
+            let text = snapshot.value as? String
+            if (text != nil) {
+                self.textView.text = text
+            } else {
+                self.textView.text = "Begin logging text..."
+            }
+            self.textViewDidChange(self.textView)
+        }) { (error) in
+            print(error.localizedDescription)
         }
     }
     
