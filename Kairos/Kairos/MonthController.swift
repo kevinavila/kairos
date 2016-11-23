@@ -66,10 +66,11 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         
         // Setup text color
         if cellState.dateBelongsTo == .thisMonth {
+            myCustomCell.isUserInteractionEnabled = true
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
         } else {
+            myCustomCell.isUserInteractionEnabled = false
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x575757)
-            // Make cell unselectable
         }
     }
     

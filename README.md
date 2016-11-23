@@ -26,8 +26,6 @@ Current list of what needs to be done:
 
 -Bug: Image scaling and rotation in day view
 
--Fix: Make date cells from different month un-selectable
-
 -Fix: Make month view vertical scrolling
 
 -Fix: Day view auto layout issues
@@ -36,7 +34,7 @@ Current list of what needs to be done:
 
 -To-do: Dynamic views in day view in view mode
 
--To-do: Make video, audio, and text persist (as well as image bin)
+-To-do: Make video and audio (as well as image bin)
 
 -To-do: Add waveform visualization for audio
 
