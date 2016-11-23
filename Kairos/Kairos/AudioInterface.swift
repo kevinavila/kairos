@@ -123,7 +123,7 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBAction func userClickedSave(_ sender: AnyObject) {
         cleanup()
         self.audioInterfaceDelegate.audioInterfaceDismissed(withFileURL: outputURL)
-        //self.dismiss(animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Helper functions

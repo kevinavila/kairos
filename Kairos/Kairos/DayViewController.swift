@@ -10,9 +10,10 @@ import UIKit
 import FirebaseStorage
 import FirebaseAuth
 import FirebaseDatabase
+import AVFoundation
 
 class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate, AudioInterfaceDelegate {
+UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
     
     // Set when user clicks on a date in the month view
     var date:Date? = nil
@@ -27,6 +28,8 @@ UINavigationControllerDelegate, AudioInterfaceDelegate {
     var keyboardIsVisible: Bool! = false
     var inViewMode: Bool! = true
     var currentImageView: Int! = 0
+    var audioURL: NSURL?
+    var audioPlayer: AVAudioPlayer!
     
     @IBOutlet var images: [UIButton]!
     
@@ -218,6 +221,34 @@ UINavigationControllerDelegate, AudioInterfaceDelegate {
         textView.endEditing(true)
     }
     
+    // Audio functions
+    
+    @IBAction func playAudio(_ sender: AnyObject) {
+        if (audioURL != nil) {
+            
+            if let audioPlayer = audioPlayer { // audio is currently playing
+                audioPlayer.stop()
+                self.audioPlayer = nil
+                return
+            }
+            
+            do {
+                try audioPlayer = AVAudioPlayer(contentsOf: audioURL as! URL)
+            }
+            catch let error as NSError {
+                NSLog("error: \(error)")
+            }
+            
+            audioPlayer?.delegate = self
+            audioPlayer?.play()
+            
+        }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        self.audioPlayer = nil
+    }
+
     // Save to database
     
     @IBAction func editSaveToggle(_ sender: AnyObject) {
@@ -334,7 +365,9 @@ UINavigationControllerDelegate, AudioInterfaceDelegate {
     }
     
     func audioInterfaceDismissed(withFileURL fileURL: NSURL?) {
-        print("Audio file saved")
+        self.audioURL = fileURL
+        
+        // Save audio file to database
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
