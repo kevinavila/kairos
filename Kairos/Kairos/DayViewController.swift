@@ -12,7 +12,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class DayViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, UIImagePickerControllerDelegate,
-UINavigationControllerDelegate {
+UINavigationControllerDelegate, AudioInterfaceDelegate {
     
     // Set when user clicks on a date in the month view
     var date:Date? = nil
@@ -39,6 +39,7 @@ UINavigationControllerDelegate {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var audioButton: UIButton!
+    @IBOutlet weak var playAudioButton: UIButton!
     @IBOutlet weak var editSaveButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -74,6 +75,9 @@ UINavigationControllerDelegate {
         retrieveImages(dateString: selectedDateString)
         retrieveText(dateString: selectedDateString)
         
+        // Hide add audio button
+        audioButton.isEnabled = false
+        audioButton.isHidden = true
         
         // Change border color of image views and audio button
         self.imageView1.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
@@ -81,16 +85,17 @@ UINavigationControllerDelegate {
         self.imageView3.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         self.imageBin.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         self.audioButton.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
+        self.playAudioButton.layer.borderColor = UIColor(colorWithHexValue: 0x008080).cgColor
         
         self.imageView1.layer.borderWidth = 1.0
         self.imageView2.layer.borderWidth = 1.0
         self.imageView3.layer.borderWidth = 1.0
         self.imageBin.layer.borderWidth = 1.0
         self.audioButton.layer.borderWidth = 1.0
+        self.playAudioButton.layer.borderWidth = 1.0
         
         // Default to VIEW mode
         textView.isEditable = false
-        audioButton.isEnabled = false
         self.imageView1.isEnabled = false
         self.imageView2.isEnabled = false
         self.imageView3.isEnabled = false
@@ -219,6 +224,9 @@ UINavigationControllerDelegate {
         if (inViewMode == true) { // switch to edit mode
             textView.isEditable = true
             audioButton.isEnabled = true
+            audioButton.isHidden = false
+            playAudioButton.isEnabled = false
+            playAudioButton.isHidden = true
             self.imageView1.isEnabled = true
             self.imageView2.isEnabled = true
             self.imageView3.isEnabled = true
@@ -229,6 +237,9 @@ UINavigationControllerDelegate {
         } else { // save and switch to view mode
             textView.isEditable = false
             audioButton.isEnabled = false
+            audioButton.isHidden = true
+            playAudioButton.isEnabled = true
+            playAudioButton.isHidden = false
             self.imageView1.isEnabled = false
             self.imageView2.isEnabled = false
             self.imageView3.isEnabled = false
@@ -322,6 +333,19 @@ UINavigationControllerDelegate {
         }
     }
     
+    func audioInterfaceDismissed(withFileURL fileURL: NSURL?) {
+        print("Audio file saved")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dayViewToAI" {
+            
+            // Get the destination view controller
+            let navViewController:UINavigationController = segue.destination as! UINavigationController
+            let AI:AudioInterface = navViewController.topViewController as! AudioInterface
+            AI.audioInterfaceDelegate = self
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

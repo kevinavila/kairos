@@ -9,6 +9,10 @@
 import UIKit
 import AVFoundation
 
+protocol AudioInterfaceDelegate: class {
+    func audioInterfaceDismissed(withFileURL fileURL: NSURL?)
+}
+
 class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
     
@@ -23,6 +27,7 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var recorder: AVAudioRecorder!
     var player: AVAudioPlayer!
     var outputURL: NSURL!
+    var audioInterfaceDelegate: AudioInterfaceDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -117,7 +122,8 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     @IBAction func userClickedSave(_ sender: AnyObject) {
         cleanup()
-        self.dismiss(animated: true, completion: nil)
+        self.audioInterfaceDelegate.audioInterfaceDismissed(withFileURL: outputURL)
+        //self.dismiss(animated: true, completion: nil)
     }
     
     // Helper functions

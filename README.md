@@ -34,7 +34,9 @@ Current list of what needs to be done:
 
 -To-do: Dynamic views in day view in view mode
 
--To-do: Make video and audio (as well as image bin)
+-To-do: Make video and audio persist (as well as image bin)
+
+-To-do: Implement cancel option when user is in edit mode
 
 -To-do: Add waveform visualization for audio
 

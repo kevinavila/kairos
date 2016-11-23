@@ -86,7 +86,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-oJ-VEK" userLabel="Audio Button">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-oJ-VEK" userLabel="Add Audio Button">
                                 <frame key="frameInset" minY="600" width="375" height="69"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add Audio">
@@ -95,6 +95,13 @@
                                 <connections>
                                     <segue destination="Tw8-wY-Yfe" kind="presentation" identifier="dayViewToAI" modalTransitionStyle="coverVertical" id="Ptt-BC-vYm"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feT-Y8-Bfe" userLabel="Play Audio Button">
+                                <frame key="frameInset" minY="600" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play Audio">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                             </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-bO-xeZ">
                                 <frame key="frameInset" width="375" height="592"/>
@@ -192,6 +199,7 @@
                         <outlet property="imageView1" destination="Ktj-PO-gHk" id="XM5-xr-vso"/>
                         <outlet property="imageView2" destination="Rh2-VO-Vzk" id="bI6-dw-Fhc"/>
                         <outlet property="imageView3" destination="QqN-43-vg4" id="Ii9-FK-Jfy"/>
+                        <outlet property="playAudioButton" destination="feT-Y8-Bfe" id="dNq-Rq-MC6"/>
                         <outlet property="scrollView" destination="aDI-bO-xeZ" id="IuE-kC-Avl"/>
                         <outlet property="textView" destination="paF-SA-Ped" id="si1-65-LRo"/>
                         <outletCollection property="images" destination="Ktj-PO-gHk" collectionClass="NSMutableArray" id="ZQx-gY-l49"/>
