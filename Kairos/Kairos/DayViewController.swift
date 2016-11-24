@@ -28,7 +28,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
     var keyboardIsVisible: Bool! = false
     var inViewMode: Bool! = true
     var currentImageView: Int! = 0
-    var audioURL: NSURL?
+    var audioData: Data?
     var audioPlayer: AVAudioPlayer!
     
     @IBOutlet var images: [UIButton]!
@@ -77,6 +77,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
         print(selectedDateString)
         retrieveImages(dateString: selectedDateString)
         retrieveText(dateString: selectedDateString)
+        retrieveAudio(dateString: selectedDateString)
         
         // Hide add audio button
         audioButton.isEnabled = false
@@ -224,8 +225,8 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
     // Audio functions
     
     @IBAction func playAudio(_ sender: AnyObject) {
-        if (audioURL != nil) {
-            
+        
+        if (audioData != nil) {
             if let audioPlayer = audioPlayer { // audio is currently playing
                 audioPlayer.stop()
                 self.audioPlayer = nil
@@ -233,7 +234,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
             }
             
             do {
-                try audioPlayer = AVAudioPlayer(contentsOf: audioURL as! URL)
+                try audioPlayer = AVAudioPlayer(data: audioData!)
             }
             catch let error as NSError {
                 NSLog("error: \(error)")
@@ -241,8 +242,8 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
             
             audioPlayer?.delegate = self
             audioPlayer?.play()
-            
         }
+        
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
@@ -264,6 +265,9 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
             self.imageBin.isEnabled = true
             
             editSaveButton.title = "Save"
+            if (audioData != nil) {
+                audioButton.setTitle("Replace Audio", for: .normal)
+            }
             inViewMode = false
         } else { // save and switch to view mode
             textView.isEditable = false
@@ -278,6 +282,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
             
             saveImages()
             saveText()
+            saveAudio()
             
             editSaveButton.title = "Edit"
             inViewMode = true
@@ -364,10 +369,51 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
         }
     }
     
-    func audioInterfaceDismissed(withFileURL fileURL: NSURL?) {
-        self.audioURL = fileURL
+    func retrieveAudio(dateString: String) {
+        let audioRef = storageRef.child(user.uid+"/"+dateString+"/audioClip.m4a")
         
-        // Save audio file to database
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        audioRef.data(withMaxSize: 4 * 1024 * 1024) { (data, error) -> Void in
+            if (error != nil) {
+                print("Unable to download audio.")
+            } else {
+                if (data != nil) {
+                    self.audioData = data!
+                }
+            }
+        }
+    }
+    
+    func saveAudio() {
+        if (audioData != nil && user != nil) {
+            let uploadMetadata = FIRStorageMetadata()
+            uploadMetadata.contentType = "audio/mpeg"
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+            let dateString = dateFormatter.string(from: date!)
+            
+            let audioRef = storageRef.child(user.uid+"/"+dateString+"/audioClip.m4a")
+            audioRef.put(audioData!, metadata: uploadMetadata, completion: { (metadata, error) -> Void in
+                if (error != nil) {
+                    print("Error uploading audio: \(error?.localizedDescription)")
+                } else {
+                    print("Successfully uploaded audio")
+                }
+            })
+        }
+    }
+    
+    func audioInterfaceDismissed(withFileURL fileURL: NSURL?) {
+        if (fileURL != nil) {
+            do {
+                self.audioData = try Data(contentsOf: fileURL as! URL, options: .mappedIfSafe)
+            } catch let error {
+                print("error occured \(error)")
+            }
+            self.audioButton.setTitle("Replace Audio", for: .normal)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
