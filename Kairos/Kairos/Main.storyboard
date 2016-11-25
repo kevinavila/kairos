@@ -52,6 +52,25 @@
             </objects>
             <point key="canvasLocation" x="76" y="194"/>
         </scene>
+        <!--Settings-->
+        <scene sceneID="UjA-UL-jWM">
+            <objects>
+                <viewController restorationIdentifier="settingsController" storyboardIdentifier="settingsController" title="Settings" id="mam-uu-1zg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EM5-n7-7Mb"/>
+                        <viewControllerLayoutGuide type="bottom" id="HXD-oe-YAi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kwM-Nj-5MR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="alN-zX-7yd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoQ-bE-s9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1969" y="-495"/>
+        </scene>
         <!--Month Controller-->
         <scene sceneID="Wj6-cb-iew">
             <objects>
@@ -72,7 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6rM-p9-1Oy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2368.8000000000002" y="193.85307346326837"/>
+            <point key="canvasLocation" x="2393" y="194"/>
         </scene>
         <!--Day View-->
         <scene sceneID="3AV-S0-6hP">
@@ -489,7 +508,13 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Year View" id="W4y-vl-4hd"/>
+                    <navigationItem key="navigationItem" title="Year View" id="W4y-vl-4hd">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="Xtr-9j-TS8">
+                            <connections>
+                                <segue destination="mam-uu-1zg" kind="show" id="MRP-3a-kZc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2HD-xg-DEj" id="2WC-SO-2nF"/>
                         <segue destination="LfP-as-eqI" kind="show" identifier="yearToMonth" id="pyt-32-BqS"/>

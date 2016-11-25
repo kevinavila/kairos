@@ -26,6 +26,8 @@ Current list of what needs to be done:
 
 -Bug: Image scaling and rotation in day view
 
+-Bug: Keyboard covers text when logging text
+
 -Fix: Make month view vertical scrolling
 
 -Fix: Day view auto layout issues
