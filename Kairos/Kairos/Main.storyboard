@@ -55,7 +55,7 @@
         <!--Settings-->
         <scene sceneID="UjA-UL-jWM">
             <objects>
-                <viewController restorationIdentifier="settingsController" storyboardIdentifier="settingsController" title="Settings" id="mam-uu-1zg" sceneMemberID="viewController">
+                <viewController restorationIdentifier="settingsController" storyboardIdentifier="settingsController" title="Settings" id="mam-uu-1zg" customClass="SettingsController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EM5-n7-7Mb"/>
                         <viewControllerLayoutGuide type="bottom" id="HXD-oe-YAi"/>
@@ -63,18 +63,72 @@
                     <view key="view" contentMode="scaleToFill" id="kwM-Nj-5MR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zNa-2z-2Yr">
+                                <date key="date" timeIntervalSinceReferenceDate="501804843.09610403">
+                                    <!--2016-11-25 22:14:03 +0000-->
+                                </date>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                        <color key="value" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="datePickerAction:" destination="mam-uu-1zg" eventType="valueChanged" id="G5H-M3-3YT"/>
+                                </connections>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eAG-1J-giz">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="K2Y-86-tTv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="No Reminders">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="noRemindersButtonTapped:" destination="mam-uu-1zg" eventType="touchUpInside" id="ICt-5a-IVs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1l-3Z-QQA">
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Enable reminders">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="enableRemindersButtonTapped:" destination="mam-uu-1zg" eventType="touchUpInside" id="YXw-TT-8yo"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zNa-2z-2Yr" firstAttribute="leading" secondItem="kwM-Nj-5MR" secondAttribute="leading" id="1sh-l6-VbR"/>
+                            <constraint firstItem="X1l-3Z-QQA" firstAttribute="top" secondItem="EM5-n7-7Mb" secondAttribute="bottom" constant="263" id="55G-EE-rua"/>
+                            <constraint firstItem="zNa-2z-2Yr" firstAttribute="centerY" secondItem="X1l-3Z-QQA" secondAttribute="centerY" id="5Dz-wL-QSY"/>
+                            <constraint firstAttribute="bottom" secondItem="eAG-1J-giz" secondAttribute="bottom" constant="20" symbolic="YES" id="7Nt-R6-9VC"/>
+                            <constraint firstItem="zNa-2z-2Yr" firstAttribute="bottom" secondItem="HXD-oe-YAi" secondAttribute="top" id="BdE-ae-YNh"/>
+                            <constraint firstItem="zNa-2z-2Yr" firstAttribute="top" secondItem="EM5-n7-7Mb" secondAttribute="bottom" id="Fec-Yv-yxL"/>
+                            <constraint firstAttribute="trailing" secondItem="zNa-2z-2Yr" secondAttribute="trailing" id="Fx3-XW-h5O"/>
+                            <constraint firstItem="eAG-1J-giz" firstAttribute="leading" secondItem="kwM-Nj-5MR" secondAttribute="leadingMargin" constant="99" id="NPj-rx-k7D"/>
+                            <constraint firstItem="zNa-2z-2Yr" firstAttribute="centerX" secondItem="X1l-3Z-QQA" secondAttribute="centerX" id="dgj-tf-kGv"/>
+                            <constraint firstItem="X1l-3Z-QQA" firstAttribute="leading" secondItem="kwM-Nj-5MR" secondAttribute="leadingMargin" constant="64" id="i5f-CQ-7mS"/>
+                            <constraint firstItem="X1l-3Z-QQA" firstAttribute="centerX" secondItem="eAG-1J-giz" secondAttribute="centerX" id="pFK-87-eq9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="alN-zX-7yd"/>
+                    <connections>
+                        <outlet property="datePicker" destination="zNa-2z-2Yr" id="ef0-iA-zZD"/>
+                        <outlet property="enableRemindersButton" destination="X1l-3Z-QQA" id="i1g-nr-ZlU"/>
+                        <outlet property="noRemindersButton" destination="eAG-1J-giz" id="aoc-Kz-ST6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WoQ-bE-s9V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="-495"/>
+            <point key="canvasLocation" x="1980" y="-495"/>
         </scene>
-        <!--Month Controller-->
+        <!--Month View-->
         <scene sceneID="Wj6-cb-iew">
             <objects>
-                <viewController restorationIdentifier="monthController" storyboardIdentifier="monthController" id="LfP-as-eqI" customClass="MonthController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="monthController" storyboardIdentifier="monthController" title="Month View" id="LfP-as-eqI" customClass="MonthController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3JF-AK-yoQ"/>
                         <viewControllerLayoutGuide type="bottom" id="XIB-FZ-Fk6"/>
@@ -84,6 +138,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Month View" id="vbJ-74-HeM" userLabel="Month View">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="g97-PY-akO">
+                            <connections>
+                                <segue destination="mam-uu-1zg" kind="show" id="7qN-RZ-Ctv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="calendarView" destination="ReS-mC-aj8" id="OZk-0h-XgP"/>
                         <segue destination="Tej-1u-sq1" kind="show" identifier="goToDay" id="Njd-en-ZxF"/>
@@ -561,4 +622,7 @@
             <point key="canvasLocation" x="3944.8000000000002" y="193.85307346326837"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="7qN-RZ-Ctv"/>
+    </inferredMetricsTieBreakers>
 </document>

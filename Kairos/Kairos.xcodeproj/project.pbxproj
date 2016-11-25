@@ -19,6 +19,7 @@
 		DB587B681DA80467005D61BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB587B661DA80467005D61BB /* LaunchScreen.storyboard */; };
 		DB587B731DA80468005D61BB /* KairosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B721DA80468005D61BB /* KairosTests.swift */; };
 		DB587B7E1DA80468005D61BB /* KairosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B7D1DA80468005D61BB /* KairosUITests.swift */; };
+		DB65079C1DE8F03D0032370A /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB65079B1DE8F03B0032370A /* SettingsController.swift */; };
 		DB89A3701DB9DBFA00FEF7F3 /* MonthHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB89A36F1DB9DBFA00FEF7F3 /* MonthHeader.xib */; };
 		DB89A3721DB9DD2B00FEF7F3 /* MonthHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB89A3711DB9DD2B00FEF7F3 /* MonthHeader.swift */; };
 		DB9F4A9B1DB992FA00B1D2D9 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB9F4A9A1DB992FA00B1D2D9 /* CellView.swift */; };
@@ -72,6 +73,7 @@
 		DB587B7D1DA80468005D61BB /* KairosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KairosUITests.swift; sourceTree = "<group>"; };
 		DB587B7F1DA80468005D61BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB5EB4131DAF030300959DAC /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		DB65079B1DE8F03B0032370A /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		DB89A36F1DB9DBFA00FEF7F3 /* MonthHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MonthHeader.xib; sourceTree = "<group>"; };
 		DB89A3711DB9DD2B00FEF7F3 /* MonthHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthHeader.swift; sourceTree = "<group>"; };
 		DB9F4A9A1DB992FA00B1D2D9 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				DB89A3711DB9DD2B00FEF7F3 /* MonthHeader.swift */,
 				DB587B5F1DA80467005D61BB /* LoginController.swift */,
 				DBCE5C801DB6E1CA00580F67 /* Main.storyboard */,
+				DB65079B1DE8F03B0032370A /* SettingsController.swift */,
 				DB46A2781DD470DB0064D0C2 /* AudioInterface.swift */,
 				DB1A13A71DD0386500C30C1F /* YearCell.swift */,
 				DB9F4A9C1DB9A46900B1D2D9 /* CellView.xib */,
@@ -478,6 +481,7 @@
 				DBCE5C831DB6E24F00580F67 /* MonthController.swift in Sources */,
 				DB1A13A81DD0386500C30C1F /* YearCell.swift in Sources */,
 				DBCE5C851DB6E95500580F67 /* YearController.swift in Sources */,
+				DB65079C1DE8F03D0032370A /* SettingsController.swift in Sources */,
 				DB89A3721DB9DD2B00FEF7F3 /* MonthHeader.swift in Sources */,
 				DBECA46E1DB1BF8F0006C287 /* NavigationController.swift in Sources */,
 				DB587B5E1DA80467005D61BB /* AppDelegate.swift in Sources */,
