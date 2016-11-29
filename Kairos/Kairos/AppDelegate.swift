@@ -21,6 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        if #available(iOS 8, *) {
+            application.registerUserNotificationSettings(UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil))
+        }
         
         UIApplication.shared.statusBarStyle = .lightContent
         if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
