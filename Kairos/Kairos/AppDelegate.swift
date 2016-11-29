@@ -51,6 +51,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        let notificationAlert = UIAlertController(title: "Kairos", message: notification.alertBody!, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        notificationAlert.addAction(defaultAction)
+        
+        self.window?.rootViewController?.present(notificationAlert, animated: true, completion: nil)
+    }
+    
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
     }

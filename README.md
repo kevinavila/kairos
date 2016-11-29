@@ -28,6 +28,8 @@ Current list of what needs to be done:
 
 -Bug: Keyboard covers text when logging text
 
+-Bug: Local notifications are deprecated. Use UNUserNotifications for iOS 10+
+
 -Fix: Make month view vertical scrolling
 
 -Fix: Day view auto layout issues
