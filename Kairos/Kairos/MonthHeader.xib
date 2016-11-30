@@ -29,20 +29,39 @@
                     <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lS9-uy-0c3" userLabel="Divider">
-                    <frame key="frameInset" minY="139" width="449" height="1"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lS9-uy-0c3" userLabel="Divider">
                     <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="5Qq-9a-6eK"/>
+                        <constraint firstAttribute="width" constant="449" id="MQm-vH-0je"/>
+                    </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="S               M              T              W              T               F                S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ttd-CQ-ZES">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="449" id="Dry-jJ-0Fy"/>
+                        <constraint firstAttribute="height" constant="23.5" id="kBq-At-P3C"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="17"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Ttd-CQ-ZES" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="110" id="4ZS-tq-THC"/>
+                <constraint firstItem="Ttd-CQ-ZES" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6g5-D4-YUa"/>
+                <constraint firstItem="lS9-uy-0c3" firstAttribute="top" secondItem="Ttd-CQ-ZES" secondAttribute="bottom" constant="5" id="9q5-hn-bLj"/>
                 <constraint firstItem="y6H-Dg-CyF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="A11-le-VUb"/>
                 <constraint firstItem="fEy-kv-IIw" firstAttribute="top" secondItem="y6H-Dg-CyF" secondAttribute="bottom" constant="1" id="BrF-Qw-Zhx"/>
+                <constraint firstAttribute="trailing" secondItem="lS9-uy-0c3" secondAttribute="trailing" id="ELe-65-I6X"/>
+                <constraint firstAttribute="bottom" secondItem="lS9-uy-0c3" secondAttribute="bottom" id="O5q-Q1-s0e"/>
+                <constraint firstAttribute="bottom" secondItem="Ttd-CQ-ZES" secondAttribute="bottom" constant="6" id="QLr-m6-UG6"/>
                 <constraint firstItem="y6H-Dg-CyF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="THG-vT-SXS"/>
                 <constraint firstAttribute="trailing" secondItem="y6H-Dg-CyF" secondAttribute="trailing" constant="143" id="UdF-ZN-3jx"/>
                 <constraint firstAttribute="trailing" secondItem="fEy-kv-IIw" secondAttribute="trailing" constant="376" id="WbD-7c-S0j"/>
                 <constraint firstItem="fEy-kv-IIw" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="aSQ-TT-vNy"/>
+                <constraint firstAttribute="trailing" secondItem="Ttd-CQ-ZES" secondAttribute="trailing" id="cdw-YB-S0C"/>
+                <constraint firstItem="lS9-uy-0c3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ke6-pD-Hps"/>
                 <constraint firstAttribute="bottom" secondItem="fEy-kv-IIw" secondAttribute="bottom" constant="75" id="pgz-Vh-FIA"/>
                 <constraint firstItem="fEy-kv-IIw" firstAttribute="top" secondItem="y6H-Dg-CyF" secondAttribute="bottom" constant="1" id="zL9-Ip-iru"/>
             </constraints>
@@ -51,7 +70,7 @@
                 <outlet property="monthLabel" destination="y6H-Dg-CyF" id="kam-Dq-oiQ"/>
                 <outlet property="yearLabel" destination="fEy-kv-IIw" id="X0z-Wt-CZu"/>
             </connections>
-            <point key="canvasLocation" x="70" y="211"/>
+            <point key="canvasLocation" x="69.5" y="211"/>
         </view>
     </objects>
 </document>
