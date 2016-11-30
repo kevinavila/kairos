@@ -66,8 +66,16 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         
         // Setup text color
         if cellState.dateBelongsTo == .thisMonth {
-            myCustomCell.isUserInteractionEnabled = true
-            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
+            if (date > Date()) { // Future date in month, can't log yet
+                myCustomCell.isUserInteractionEnabled = false
+            } else {
+                myCustomCell.isUserInteractionEnabled = true
+            }
+            if (isCurrentDay(date: date)) {
+                myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x008080)
+            } else {
+                myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
+            }
         } else {
             myCustomCell.isUserInteractionEnabled = false
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x575757)
@@ -79,6 +87,8 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     // Called when cell is selected
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         self.selectedDate = date
+        let myCustomCell = cell as! CellView
+        myCustomCell.dayLabel.textColor = UIColor.black
         handleCellSelection(view: cell, cellState: cellState)
         
         if cellState.isSelected {
@@ -87,6 +97,12 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        let myCustomCell = cell as! CellView
+        if (isCurrentDay(date: date)) {
+            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x008080)
+        } else {
+            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
+        }
         handleCellSelection(view: cell, cellState: cellState)
     }
     
@@ -107,6 +123,17 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         let monthNames = DateFormatter().monthSymbols as [String]
         headerCell?.monthLabel.text = monthNames[month-1]
         headerCell?.yearLabel.text = String(year)
+    }
+    
+    func isCurrentDay(date: Date) -> Bool {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+        let dateString = formatter.string(from: date)
+        var localTimeZoneAbbreviation: String { return NSTimeZone.local.abbreviation(for: Date()) ?? ""}
+        formatter.timeZone = TimeZone(abbreviation: localTimeZoneAbbreviation)
+        let todayString = formatter.string(from: Date())
+        return dateString == todayString
     }
     
     func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
