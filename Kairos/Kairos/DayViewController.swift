@@ -67,7 +67,13 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
         // Populate day
         // Should you cache?
         if (date == nil) { // App was just opened. Go to current day.
-            date = Date()
+            let cdFormatter = DateFormatter()
+            cdFormatter.dateFormat = "yyyy-MM-dd"
+            var localTimeZoneAbbreviation: String { return NSTimeZone.local.abbreviation(for: Date()) ?? ""}
+            cdFormatter.timeZone = TimeZone(abbreviation: localTimeZoneAbbreviation)
+            let currentDateString = cdFormatter.string(from: Date())
+            date = cdFormatter.date(from: currentDateString)
+            print("CURRENT DATE: \(date)")
         }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
