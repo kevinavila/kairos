@@ -9,12 +9,15 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import FirebaseDatabase
+import FirebaseAuth
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var databaseRef:FIRDatabaseReference!
+    var user:FIRUser!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -42,6 +45,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 window.rootViewController = navController
                 (window.rootViewController as! UINavigationController).pushViewController(monthController, animated: false)
                 (window.rootViewController as! UINavigationController).pushViewController(dayViewController, animated: false)
+                
+                user = FIRAuth.auth()?.currentUser
+                scheduleReminder()
             } else {
                 let loginController = storyboard.instantiateViewController(withIdentifier: "loginController")
                 window.rootViewController = loginController
@@ -83,6 +89,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    // Schedule log reminder
+    func scheduleReminder() {
+        let database = FIRDatabase.database()
+        databaseRef = database.reference()
+        
+        databaseRef.child(user.uid+"/reminder_time").observeSingleEvent(of: .value, with: { (snapshot) in
+            let text = snapshot.value as? String
+            if (text != nil) {
+                if (text != "REMINDERS_DISABLED") {
+                    // Set date picker to date from database
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "hh:mm a"
+                    let date = dateFormatter.date(from: text!)
+                    
+                    
+                    UIApplication.shared.cancelAllLocalNotifications()
+                    
+                    let fullNameArr = self.user.displayName?.characters.split{$0 == " "}.map(String.init)
+                    let firstName = fullNameArr?[0]
+                    
+                    let notification = UILocalNotification()
+                    notification.alertBody = "Hey \(firstName!), don't forget to log for the day!"
+                    notification.alertAction = "log"
+                    notification.repeatInterval = NSCalendar.Unit.day
+                    notification.fireDate = date
+                    
+                    UIApplication.shared.scheduleLocalNotification(notification)
+                }
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
     }
 
 

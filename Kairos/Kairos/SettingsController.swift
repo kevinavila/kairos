@@ -87,7 +87,7 @@ class SettingsController: UIViewController {
         UIApplication.shared.cancelAllLocalNotifications()
         
         let notification = UILocalNotification()
-        notification.alertBody = "Hey \(self.firstName!), time to log for the day!"
+        notification.alertBody = "Hey \(self.firstName!), don't forget to log for the day!"
         notification.alertAction = "log"
         notification.repeatInterval = NSCalendar.Unit.day
         
