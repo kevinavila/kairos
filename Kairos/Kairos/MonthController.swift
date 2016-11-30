@@ -72,15 +72,22 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
             myCustomCell.isUserInteractionEnabled = false
             myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x575757)
         }
+        
+        handleCellSelection(view: cell, cellState: cellState)
     }
     
     // Called when cell is selected
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
         self.selectedDate = date
+        handleCellSelection(view: cell, cellState: cellState)
         
         if cellState.isSelected {
             self.performSegue(withIdentifier: "goToDay", sender: self)
         }
+    }
+    
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
+        handleCellSelection(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
@@ -100,6 +107,18 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         let monthNames = DateFormatter().monthSymbols as [String]
         headerCell?.monthLabel.text = monthNames[month-1]
         headerCell?.yearLabel.text = String(year)
+    }
+    
+    func handleCellSelection(view: JTAppleDayCellView?, cellState: CellState) {
+        guard let myCustomCell = view as? CellView  else {
+            return
+        }
+        if cellState.isSelected {
+            myCustomCell.selectedView.layer.cornerRadius = 22.5
+            myCustomCell.selectedView.isHidden = false
+        } else {
+            myCustomCell.selectedView.isHidden = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

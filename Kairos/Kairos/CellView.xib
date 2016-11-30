@@ -11,6 +11,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qLU-Bw-l8f">
+                    <frame key="frameInset" minX="162" minY="308" width="45" height="45"/>
+                    <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="QxL-HT-ZOT"/>
+                        <constraint firstAttribute="width" constant="45" id="dTq-kl-Nai"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DateText" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b2V-4W-X5i">
                     <frame key="frameInset" minX="166" minY="323" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -22,9 +30,12 @@
             <constraints>
                 <constraint firstItem="b2V-4W-X5i" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="K7d-cx-LQS"/>
                 <constraint firstItem="b2V-4W-X5i" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QOC-dz-8MO"/>
+                <constraint firstItem="qLU-Bw-l8f" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SiG-jr-y6A"/>
+                <constraint firstItem="qLU-Bw-l8f" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="vXw-ca-e1w"/>
             </constraints>
             <connections>
                 <outlet property="dayLabel" destination="b2V-4W-X5i" id="rCN-lX-uW8"/>
+                <outlet property="selectedView" destination="qLU-Bw-l8f" id="46Q-X2-zPD"/>
             </connections>
         </view>
     </objects>
