@@ -32,6 +32,8 @@ class AudioInterface: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        
         saveButton.isEnabled = false
         
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString

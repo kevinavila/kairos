@@ -43,7 +43,9 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var audioButton: UIButton!
     @IBOutlet weak var playAudioButton: UIButton!
-    @IBOutlet weak var editSaveButton: UIBarButtonItem!
+    //@IBOutlet weak var editSaveButton: UIBarButtonItem!
+    var saveButton: UIBarButtonItem!
+    var editButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +61,10 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
         
         textView.delegate = self
         scrollView.delegate = self
+        
+        self.saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(DayViewController.editSaveToggle))
+        self.editButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(DayViewController.editSaveToggle))
+        self.navigationItem.rightBarButtonItem = self.editButton
         
         // Notifications for when keyboard appears or disappears
         NotificationCenter.default.addObserver(self, selector: #selector(DayViewController.keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -258,7 +264,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
 
     // Save to database
     
-    @IBAction func editSaveToggle(_ sender: AnyObject) {
+    func editSaveToggle() {
         if (inViewMode == true) { // switch to edit mode
             textView.isEditable = true
             audioButton.isEnabled = true
@@ -270,7 +276,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
             self.imageView3.isEnabled = true
             self.imageBin.isEnabled = true
             
-            editSaveButton.title = "Save"
+            self.navigationItem.rightBarButtonItem = self.saveButton
             if (audioData != nil) {
                 audioButton.setTitle("Replace Audio", for: .normal)
             }
@@ -290,7 +296,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
             saveText()
             saveAudio()
             
-            editSaveButton.title = "Edit"
+            self.navigationItem.rightBarButtonItem = self.editButton
             inViewMode = true
         }
         

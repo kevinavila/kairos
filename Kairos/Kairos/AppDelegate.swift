@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIApplication.shared.statusBarStyle = .lightContent
         if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-            statusBar.backgroundColor = UIColor.black
+            statusBar.backgroundColor = UIColor.darkText
         }
         
         // Uncomment to allow app to remember login info

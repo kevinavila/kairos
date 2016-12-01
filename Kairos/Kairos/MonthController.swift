@@ -35,6 +35,7 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
         if (scrollToDate != nil) {
             calendarView.scrollToDate(scrollToDate, triggerScrollToDateDelegate: false, animateScroll: false)
         } else {
+            // DATE IS WRONG HERE. GET IN CORRECT TIME ZONE
             calendarView.scrollToDate(Date(), triggerScrollToDateDelegate: false, animateScroll: false)
         }
     }
@@ -73,6 +74,8 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
             }
             if (isCurrentDay(date: date)) {
                 myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x008080)
+            } else if (cellState.isSelected) {
+                myCustomCell.dayLabel.textColor = UIColor.black
             } else {
                 myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
             }
@@ -97,13 +100,15 @@ class MonthController: UIViewController, JTAppleCalendarViewDataSource, JTAppleC
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleDayCellView?, cellState: CellState) {
-        let myCustomCell = cell as! CellView
-        if (isCurrentDay(date: date)) {
-            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x008080)
-        } else {
-            myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
+        if (cell != nil) {
+            let myCustomCell = cell as! CellView
+            if (isCurrentDay(date: date)) {
+                myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0x008080)
+            } else {
+                myCustomCell.dayLabel.textColor = UIColor(colorWithHexValue: 0xECEAED)
+            }
+            handleCellSelection(view: cell, cellState: cellState)
         }
-        handleCellSelection(view: cell, cellState: cellState)
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {

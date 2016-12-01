@@ -140,6 +140,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Month View" id="vbJ-74-HeM" userLabel="Month View">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="g97-PY-akO">
+                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="mam-uu-1zg" kind="show" id="7qN-RZ-Ctv"/>
                             </connections>
@@ -266,18 +267,11 @@
                         <gestureRecognizers/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Day View" id="1Nf-lK-fia" userLabel="Day View Nav Item">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="pxS-Ow-JNc">
-                            <connections>
-                                <action selector="editSaveToggle:" destination="Tej-1u-sq1" id="Jcl-ZE-4Io"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Day View" id="1Nf-lK-fia" userLabel="Day View Nav Item"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="audioButton" destination="Yye-oJ-VEK" id="OKk-WC-4xK"/>
                         <outlet property="dayViewDateText" destination="7Js-qu-1Aa" id="zsm-OO-SJq"/>
-                        <outlet property="editSaveButton" destination="pxS-Ow-JNc" id="FR7-72-6ez"/>
                         <outlet property="imageBin" destination="jEc-DQ-mmr" id="zyj-3B-ys2"/>
                         <outlet property="imageView1" destination="Ktj-PO-gHk" id="XM5-xr-vso"/>
                         <outlet property="imageView2" destination="Rh2-VO-Vzk" id="bI6-dw-Fhc"/>
@@ -354,11 +348,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Audio Interface" id="xEG-qr-kzM" userLabel="Audio Interface Nav Item">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OUL-zp-IbN">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="userClickedCancel:" destination="fey-ze-jNJ" id="7iE-u0-1VM"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="gJw-gP-bY9">
+                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="userClickedSave:" destination="fey-ze-jNJ" id="mTK-Fy-p8S"/>
                             </connections>
@@ -571,6 +567,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Year View" id="W4y-vl-4hd">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="Xtr-9j-TS8">
+                            <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="mam-uu-1zg" kind="show" id="MRP-3a-kZc"/>
                             </connections>
