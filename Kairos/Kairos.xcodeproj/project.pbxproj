@@ -14,6 +14,7 @@
 		DB46A2791DD470DC0064D0C2 /* AudioInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB46A2781DD470DB0064D0C2 /* AudioInterface.swift */; };
 		DB46A27B1DD59EAB0064D0C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DB46A27A1DD59EAB0064D0C2 /* GoogleService-Info.plist */; };
 		DB5706D81DF1387F007F0A7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5706D71DF1387E007F0A7F /* LaunchScreen.storyboard */; };
+		DB5706DA1DF14850007F0A7F /* KairosLaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = DB5706D91DF14850007F0A7F /* KairosLaunchImage.png */; };
 		DB587B5E1DA80467005D61BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B5D1DA80467005D61BB /* AppDelegate.swift */; };
 		DB587B601DA80467005D61BB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB587B5F1DA80467005D61BB /* LoginController.swift */; };
 		DB587B651DA80467005D61BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB587B641DA80467005D61BB /* Assets.xcassets */; };
@@ -62,6 +63,7 @@
 		DB46A2781DD470DB0064D0C2 /* AudioInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioInterface.swift; sourceTree = "<group>"; };
 		DB46A27A1DD59EAB0064D0C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DB5706D71DF1387E007F0A7F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DB5706D91DF14850007F0A7F /* KairosLaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KairosLaunchImage.png; sourceTree = "<group>"; };
 		DB587B5A1DA80467005D61BB /* Kairos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kairos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB587B5D1DA80467005D61BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB587B5F1DA80467005D61BB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				DB587B691DA80467005D61BB /* Info.plist */,
 				DB46A27A1DD59EAB0064D0C2 /* GoogleService-Info.plist */,
 				DB5EB4131DAF030300959DAC /* BridgingHeader.h */,
+				DB5706D91DF14850007F0A7F /* KairosLaunchImage.png */,
 			);
 			path = Kairos;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				DB5706D81DF1387F007F0A7F /* LaunchScreen.storyboard in Resources */,
 				DB89A3701DB9DBFA00FEF7F3 /* MonthHeader.xib in Resources */,
 				DB46A27B1DD59EAB0064D0C2 /* GoogleService-Info.plist in Resources */,
+				DB5706DA1DF14850007F0A7F /* KairosLaunchImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

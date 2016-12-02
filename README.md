@@ -10,7 +10,7 @@ A iOS application that serves as a minimal and digital outlet for thoughts and m
 
 ## Major Feature Table
 | Feature       | Description   | Planned release  | Actual release | Deviation(s) |
-| ------------- |:-------------:| ----------------:| --------------:| ------------:|
+| :-----------: |:-------------:| :---------------:| :-------------:| :-----------:|
 | Facebook Login| Allows user to log into app via Facebook. | $1600 |  x |   x     |
 | col 2 is      | centered      |   $12 		   |        x       |      x       |
 | zebra stripes | are neat      |    $1 		   |        x       |      x       |
