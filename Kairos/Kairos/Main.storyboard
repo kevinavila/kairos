@@ -61,7 +61,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HXD-oe-YAi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kwM-Nj-5MR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="zNa-2z-2Yr">
@@ -134,7 +134,7 @@
                         <viewControllerLayoutGuide type="bottom" id="XIB-FZ-Fk6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ReS-mC-aj8" customClass="JTAppleCalendarView" customModule="JTAppleCalendar">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -164,35 +164,15 @@
                         <viewControllerLayoutGuide type="bottom" id="pMy-kp-NpU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SjP-6c-bnm">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-oJ-VEK" userLabel="Add Audio Button">
-                                <frame key="frameInset" minY="600" width="375" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Add Audio">
-                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Tw8-wY-Yfe" kind="presentation" identifier="dayViewToAI" modalTransitionStyle="coverVertical" id="Ptt-BC-vYm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feT-Y8-Bfe" userLabel="Play Audio Button">
-                                <frame key="frameInset" minY="600" width="375" height="69"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play Audio">
-                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="playAudio:" destination="Tej-1u-sq1" eventType="touchUpInside" id="jeN-ve-IT8"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aDI-bO-xeZ">
                                 <frame key="frameInset" width="375" height="592"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sdg-al-w4p" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="60" width="375" height="607"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dayViewDateText" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Js-qu-1Aa">
@@ -262,6 +242,26 @@
                                     <outletCollection property="gestureRecognizers" destination="GOY-Cp-bN9" appends="YES" id="sIw-n7-2zx"/>
                                 </connections>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yye-oJ-VEK" userLabel="Add Audio Button">
+                                <frame key="frameInset" minY="534" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Audio">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Tw8-wY-Yfe" kind="presentation" identifier="dayViewToAI" modalTransitionStyle="coverVertical" id="Ptt-BC-vYm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="feT-Y8-Bfe" userLabel="Play Audio Button">
+                                <frame key="frameInset" minY="534" width="375" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Play Audio">
+                                    <color key="titleColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAudio:" destination="Tej-1u-sq1" eventType="touchUpInside" id="jeN-ve-IT8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
@@ -302,31 +302,31 @@
                         <viewControllerLayoutGuide type="bottom" id="FxK-nD-U5C"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tc4-Hc-Fdt">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ut-g4-ANd">
-                                <frame key="frameInset" minX="16" minY="208" width="343" height="79"/>
+                                <frame key="frameInset" minX="16" minY="146" width="343" height="79"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8G-zA-UhG">
-                                <frame key="frameInset" minX="91" minY="423" width="64" height="30"/>
-                                <state key="normal" title="Record">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="toggleRecordWithSender:" destination="fey-ze-jNJ" eventType="touchUpInside" id="8t8-xm-pof"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PmG-yh-rEV">
-                                <frame key="frameInset" minX="238" minY="423" width="46" height="30"/>
+                                <frame key="frameInset" minX="238" minY="358" width="46" height="30"/>
                                 <state key="normal" title="Play">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="playWithSender:" destination="fey-ze-jNJ" eventType="touchUpInside" id="LzA-AV-yew"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8G-zA-UhG">
+                                <frame key="frameInset" minX="92" minY="358" width="64" height="30"/>
+                                <state key="normal" title="Record">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleRecordWithSender:" destination="fey-ze-jNJ" eventType="touchUpInside" id="8t8-xm-pof"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -380,7 +380,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hY4-te-PPW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="j6g-Or-I8g">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="399" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2HD-xg-DEj">
@@ -392,7 +392,7 @@
                                 <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="yearCell" rowHeight="399" id="mtd-du-FOL" userLabel="Year Cell" customClass="YearCell" customModule="Kairos" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="375" height="399"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="399"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mtd-du-FOL" id="ByR-4d-VOs">
                                             <frame key="frameInset" width="375" height="399"/>
@@ -587,9 +587,13 @@
             <objects>
                 <navigationController restorationIdentifier="navController" storyboardIdentifier="navController" automaticallyAdjustsScrollViewInsets="NO" id="y2s-6v-gW0" customClass="NavigationController" customModule="Kairos" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UzQ-3w-gID">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="UzQ-3w-gID">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -605,9 +609,13 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tw8-wY-Yfe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lhd-2W-4je">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="lhd-2W-4je">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

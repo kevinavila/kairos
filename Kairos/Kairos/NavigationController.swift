@@ -12,10 +12,6 @@ class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationBar.barTintColor = UIColor.black
-        self.navigationBar.tintColor = UIColor(colorWithHexValue: 0x008080)
-        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
-        //self.navigationBar.setBottomBorderColor(color: UIColor(colorWithHexValue: 0x008080), height: 1)
     }
 }
 

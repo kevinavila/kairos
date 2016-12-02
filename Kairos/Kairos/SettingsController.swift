@@ -63,7 +63,9 @@ class SettingsController: UIViewController {
         
         databaseRef.child(user.uid+"/reminder_time").setValue(timeAsString)
         
-        scheduleReminder()
+        if (!(sender is UIButton)) {
+            scheduleReminder()
+        }
     }
     
     @IBAction func noRemindersButtonTapped(_ sender: AnyObject) {
@@ -80,7 +82,7 @@ class SettingsController: UIViewController {
         noRemindersButton.isHidden = false
         enableRemindersButton.isHidden = true
         
-        datePickerAction(UIDatePicker())
+        self.datePickerAction(self.enableRemindersButton)
     }
     
     func scheduleReminder() {

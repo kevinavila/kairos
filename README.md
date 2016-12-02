@@ -30,6 +30,8 @@ Current list of what needs to be done:
 
 -Bug: Local notifications are deprecated. Use UNUserNotifications for iOS 10+
 
+-Bug: Some months are not displaying all their days
+
 -Fix: Make month view vertical scrolling
 
 -Fix: Day view auto layout issues

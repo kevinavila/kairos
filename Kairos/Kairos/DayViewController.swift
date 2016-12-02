@@ -43,7 +43,6 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var audioButton: UIButton!
     @IBOutlet weak var playAudioButton: UIButton!
-    //@IBOutlet weak var editSaveButton: UIBarButtonItem!
     var saveButton: UIBarButtonItem!
     var editButton: UIBarButtonItem!
     
