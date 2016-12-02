@@ -32,11 +32,11 @@ Current list of what needs to be done:
 
 -Bug: Some months are not displaying all their days
 
+-Bug: Date issue where at a certain time you can click on the next day to log
+
 -Fix: Make month view vertical scrolling
 
--Fix: Day view auto layout issues
-
--Fix: Day view scroll view
+-Fix: Scroll view scrolls down too far
 
 -To-do: Dynamic views in day view in view mode
 
