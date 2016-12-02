@@ -224,7 +224,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
         var userInfo = notification.userInfo!
         let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
-        let changeInHeight = (keyboardFrame.height + 40) * (show ? 1 : -1)
+        let changeInHeight = (keyboardFrame.height) * (show ? 1 : -1)
         UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
             self.keyboardBottomConstraint.constant += changeInHeight
         })
