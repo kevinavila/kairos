@@ -34,9 +34,9 @@ Current list of what needs to be done:
 
 -Bug: Date issue where at a certain time you can click on the next day to log
 
--Fix: Make month view vertical scrolling
-
 -Fix: Scroll view scrolls down too far
+
+-Fix: Scroll view does not reset after keyboard is dismissed
 
 -To-do: Dynamic views in day view in view mode
 
