@@ -1,12 +1,19 @@
 # kairos
 A iOS application that serves as a minimal and digital outlet for thoughts and moments. Log and store what matters, then go back and reflect.
 
-##### Dependencies:
+### Dependencies:
 * Xcode 8
 * Swift 3
 * Firebase (included in Pod file)
 * FBSDK (included in Pod file)
 * JTAppleCalendar (included in Pod file)
+
+## Major Feature Table
+| Feature       | Description   | Planned release  | Actual release | Deviation(s) |
+| ------------- |:-------------:| ----------------:| --------------:| ------------:|
+| Facebook Login| Allows user to log into app via Facebook. | $1600 |  x |   x     |
+| col 2 is      | centered      |   $12 		   |        x       |      x       |
+| zebra stripes | are neat      |    $1 		   |        x       |      x       |
 
 -Login Screen
 
@@ -22,7 +29,7 @@ A iOS application that serves as a minimal and digital outlet for thoughts and m
 
 
 
-## Current list of bugs and features yet to be implemented:
+## Current list of bugs and unfinished features:
 ##### Bugs
 * Color of current month in year view
 * Color of un-selectable future months in year view
