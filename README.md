@@ -1,7 +1,7 @@
 # kairos
 A iOS application that serves as a minimal and digital outlet for thoughts and moments. Log and store what matters, then go back and reflect.
 
-Dependencies:
+##### Dependencies:
 * Xcode 8
 * Swift 3
 * Firebase (included in Pod file)
@@ -22,36 +22,23 @@ Dependencies:
 
 
 
-Current list of what needs to be done:
+## Current list of bugs and features yet to be implemented:
+##### Bugs
+* Color of current month in year view
+* Color of un-selectable future months in year view
+* Image scaling and rotation in day view
+* Some months are not displaying all their days
+* Date issue where at a certain time you can click on the next day to log
+* Scroll view scrolls down too far
+* Scroll view does not reset position after keyboard is dismissed
 
--Bug: Color of current month in year view
-
--Bug: Color of un-selectable future months in year view
-
--Bug: Image scaling and rotation in day view
-
--Bug: Keyboard covers text when logging text
-
--Bug: Local notifications are deprecated. Use UNUserNotifications for iOS 10+
-
--Bug: Some months are not displaying all their days
-
--Bug: Date issue where at a certain time you can click on the next day to log
-
--Fix: Scroll view scrolls down too far
-
--Fix: Scroll view does not reset after keyboard is dismissed
-
--To-do: Dynamic views in day view in view mode
-
--To-do: Make video persist (as well as image bin)
-
--To-do: Implement cancel option when user is in edit mode
-
--To-do: Add waveform visualization for audio
-
--To-do: Improve speed of image download
-
--To-do: Implement image bin
-
--To-do: Improve all around UI
+##### To-do's
+* Local notifications are deprecated. Use UNUserNotifications for iOS 10+
+* Dynamic views in day view in view mode
+* Make video persist (as well as image bin)
+* Implement video/photo viewer
+* Implement cancel option when user is in edit mode
+* Add waveform visualization for audio
+* Improve speed of image download
+* Implement image bin
+* Improve all around UI
