@@ -1,7 +1,12 @@
 # kairos
-Kairos iOS App
+A iOS application that serves as a minimal and digital outlet for thoughts and moments. Log and store what matters, then go back and reflect.
 
-Contributions (As of Beta):
+Dependencies:
+* Xcode 8
+* Swift 3
+* Firebase (included in Pod file)
+* FBSDK (included in Pod file)
+* JTAppleCalendar (included in Pod file)
 
 -Login Screen
 
@@ -15,8 +20,7 @@ Contributions (As of Beta):
 
 -Logging process (persistence needs to be completed)
 
-Deviations:
-The calendar mechanism is now fully functional with year, month, and day views properly integrated with each other. Aside from the UI needing improvement (currently waiting on icons and such), the main deviation is that only photos persist currently. Audio, video, and text still need to be saved. Also, the edit and view modes are implemented but the dynamic views still need to be implemented. Some slight design deviations worth mentioning are the year view (months are just words) and the removal of the save button on the bottom of the day view.
+
 
 Current list of what needs to be done:
 
