@@ -11,9 +11,12 @@ A iOS application that serves as a minimal and digital outlet for thoughts and m
 ## Major Feature Table
 | Feature       | Description   | Planned release  | Actual release | Deviation(s) |
 | :-----------: |:-------------:| :---------------:| :-------------:| :-----------:|
-| Facebook Login| Allows user to log into app via Facebook. | $1600 |  x |   x     |
-| col 2 is      | centered      |   $12 		   |        x       |      x       |
-| zebra stripes | are neat      |    $1 		   |        x       |      x       |
+| Facebook Login| Allows user to log into app via Facebook. | Alpha |  Alpha | No deviations. UI on login screen could use improvement. |
+| Calendar      | centered      |   $12 		   |        x       |      x       |
+| Day View      | centered      |   $12 		   |        x       |      x       |
+| Daily Reminder | are neat      |    $1 		   |        x       |      x       |
+| Loggin Process      | centered      |   $12 		   |        x       |      x       |
+| Settings | are neat      |    $1 		   |        x       |      x       |
 
 -Login Screen
 
