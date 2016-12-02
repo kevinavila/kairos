@@ -14,23 +14,9 @@ A iOS application that serves as a minimal and digital outlet for thoughts and m
 | Facebook Login| Allows user to log into app via Facebook. | Alpha |  Alpha | No deviations. UI on login screen could use improvement. |
 | Calendar      | Serves as the main navigation mechanism for the app. Comprised of a year, month, and day heirarchy. The year view displays months for each year (up to current year) and the month view displays a traditional month calendar where you can select a day (up to current date) to view your logged content for that date.|   Alpha		   |   Alpha/Beta   |   No deviations. |
 | Day View      | Here is where the user will be able to log and view content for that date. Photo/video exists at the top in a collage-type manner, one audio clip at the bottom if the user has recorded one, and text filling out the middle. The user can switch between view and edit mode. When in edit mode they can add/remove content. In view mode, the representation of their content should be adjusted appropriately depending on the amount they have logged for that day. |   Beta 		   |        Beta/Final      |      Dynamic views have currently not been implemented. Support for video has not been implemented either. A photo/video viewer should be added as well.    |
-| Daily Reminder | are neat      |    $1 		   |        x       |      x       |
-| Logging Process      | centered      |   $12 		   |        x       |      x       |
-| Settings | are neat      |    $1 		   |        x       |      x       |
-
--Login Screen
-
--Facebook Integration
-
--Navigation Hierarchy (Year, Month, Day)
-
--Calendar
-
--Day View (UI needs improvement)
-
--Logging process (persistence needs to be completed)
-
-
+| Daily Reminder | A reminder to log that fires off at the user's set time.      |    Final		   |        Final       |      No deviations.       |
+| Logging Process      | Process by which the user logs data. User can upload photo/video from camera roll, recorded audio, or write text.       |   Beta 		   |        Beta/Final      |      Video is not supported yet. I would also like to support geo-tags.      |
+| Settings | Where the user sets the time for their reminder.      |    Final		   |        Final      |      No deviations.      |
 
 ## Current list of bugs and unfinished features:
 ##### Bugs
