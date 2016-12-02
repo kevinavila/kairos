@@ -335,6 +335,7 @@
                         <outlet property="imageView1" destination="Ktj-PO-gHk" id="XM5-xr-vso"/>
                         <outlet property="imageView2" destination="Rh2-VO-Vzk" id="bI6-dw-Fhc"/>
                         <outlet property="imageView3" destination="QqN-43-vg4" id="Ii9-FK-Jfy"/>
+                        <outlet property="keyboardBottomConstraint" destination="xB5-An-yam" id="3jF-qJ-bDw"/>
                         <outlet property="playAudioButton" destination="feT-Y8-Bfe" id="dNq-Rq-MC6"/>
                         <outlet property="scrollView" destination="aDI-bO-xeZ" id="IuE-kC-Avl"/>
                         <outlet property="textView" destination="paF-SA-Ped" id="si1-65-LRo"/>

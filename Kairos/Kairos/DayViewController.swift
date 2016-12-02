@@ -32,6 +32,7 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
     var audioPlayer: AVAudioPlayer!
     
     @IBOutlet var images: [UIButton]!
+    @IBOutlet weak var keyboardBottomConstraint: NSLayoutConstraint!
     
     
     // Button image views
@@ -224,9 +225,9 @@ UINavigationControllerDelegate, AudioInterfaceDelegate, AVAudioPlayerDelegate {
         let keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         let animationDurarion = userInfo[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         let changeInHeight = (keyboardFrame.height + 40) * (show ? 1 : -1)
-//        UIView.animateWithDuration(animationDurarion, animations: { () -> Void in
-//            self.bottomConstraint.constant += changeInHeight
-//        })
+        UIView.animate(withDuration: animationDurarion, animations: { () -> Void in
+            self.keyboardBottomConstraint.constant += changeInHeight
+        })
     }
     
     @IBAction func dismissKeyboard(_ sender: AnyObject) {
