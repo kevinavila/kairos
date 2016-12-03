@@ -1,7 +1,7 @@
 # kairos
 ![alt text](https://github.com/kevinavila/kairos/blob/master/Kairos/Kairos/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60%403x.png "Kairos Logo")
 
-A iOS application that serves as a minimal and digital outlet for thoughts and moments. Log and store what matters, then go back and reflect.
+An iOS application that serves as a minimal and digital outlet for thoughts and moments. Log and store what matters, then go back and reflect.
 
 ### Dependencies:
 * Xcode 8
